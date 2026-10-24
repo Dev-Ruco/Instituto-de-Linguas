@@ -315,3 +315,13 @@ html.scroll-transicoes-activas [data-scroll-section].scroll-abaixo{
 .curso-hero-fotografico p{max-width:580px}
 @media(max-width:700px){.curso-hero-fotografico{min-height:315px;background-position:63% center;background-blend-mode:normal}.curso-hero-fotografico h1{max-width:100%}}
 @media(prefers-reduced-motion:reduce){.curso-hero-fotografico{animation:none!important}}
+
+/* Correcção de alinhamento e contraste dos cabeçalhos fotográficos. */
+.curso-hero-fotografico{background-color:#0b2d71}
+.curso-hero-fotografico>.contentor{width:min(1180px,calc(100% - 56px));margin-inline:auto}
+.curso-hero-fotografico h1{color:#fff;text-shadow:none}
+.curso-hero-fotografico p{color:#e4ebf7}
+.curso-hero-fotografico .voltar{color:#eaf0fb}
+.curso-hero-fotografico .voltar:hover{color:#fff}
+.curso-hero-fotografico .sobretitulo{color:#f8c427}
+@media(max-width:620px){.curso-hero-fotografico>.contentor{width:min(100% - 34px,1180px)}}
