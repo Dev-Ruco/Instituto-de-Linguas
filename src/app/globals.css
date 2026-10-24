@@ -179,3 +179,6 @@ html.motion-ready [data-reveal].is-visible{opacity:1;transform:none;transition:o
 .fachada-marcacao{position:absolute;bottom:19px;right:22px;color:#fff;background:rgba(4,24,58,.65);font-size:10px;letter-spacing:.03em;padding:7px 11px;border-radius:4px}
 @media(max-width:740px){.fachada-instituto{padding:55px 0}.fachada-home{padding-bottom:0}.fachada-painel{min-height:430px}.fachada-fotografia{background-position:center}.fachada-gradiente{background:linear-gradient(0deg,rgba(4,23,58,.94),rgba(4,23,58,.5) 65%,rgba(4,23,58,.12))}.fachada-texto{padding:90px 26px 65px}.fachada-texto p{font-size:13px}.fachada-marcacao{right:14px;bottom:12px;font-size:9px}}
 @media(prefers-reduced-motion:reduce){.fachada-fotografia{transition:none!important}.fachada-painel:hover .fachada-fotografia{transform:none!important}}
+
+/* Fachada real na secção existente «Sobre o Instituto» da página inicial. */
+.imagem-destaque{background-image:url("/images/instituto/fachada-instituto.jpg");background-position:center;background-size:cover}

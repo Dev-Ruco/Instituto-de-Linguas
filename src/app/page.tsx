@@ -4,7 +4,6 @@ import { CartaoCurso } from "@/components/cartao-curso";
 import { Chamada } from "@/components/chamada";
 import { CarrosselNoticias } from "@/components/carrossel-noticias";
 import { SecaoDireccao } from "@/components/secao-direccao";
-import { SecaoFachadaInstituto } from "@/components/secao-fachada-instituto";
 import { cursos, noticias } from "@/lib/conteudos";
 export default function Inicio() {
   return <>
@@ -19,7 +18,6 @@ export default function Inicio() {
     </div></section>
     <div className="faixa-valores"><div className="contentor valores-interior"><span><BookOpen size={20}/> Oferta de línguas</span><span><MapPinned size={20}/> Delegações em Moçambique</span><span><Globe2 size={20}/> Comunicação sem fronteiras</span></div></div>
     <section data-reveal className="secao contentor"><div className="secao-cabecalho"><div><span className="sobretitulo">FORMAÇÃO PARA O SEU FUTURO</span><h2>Descubra uma língua.<br/><span>Descubra mais oportunidades.</span></h2></div><Link href="/cursos" className="ligacao-texto">Ver todos os cursos <ArrowUpRight size={18}/></Link></div><div className="cursos-grid">{cursos.slice(0,6).map((curso,i)=><div data-reveal style={{"--reveal-delay": `${(i%3)*90}ms`} as React.CSSProperties} key={curso.slug}><CartaoCurso curso={curso} indice={i}/></div>)}</div></section>
-    <SecaoFachadaInstituto resumo />
     <section data-reveal className="seccao-destaque"><div className="contentor destaque-grid"><div className="imagem-destaque" role="img" aria-label="Estudantes em ambiente de formação"/><div className="destaque-texto"><span className="sobretitulo">SOBRE O INSTITUTO</span><h2>Uma instituição dedicada à aprendizagem de línguas.</h2><p>Promover o conhecimento linguístico é criar pontes entre comunidades, culturas e oportunidades. Descubra a missão e a actividade do Instituto de Línguas.</p><div className="destaque-linha"><span><BookOpen size={20}/></span><div><strong>Aprendizagem de línguas</strong><p>Programas dirigidos a diferentes públicos.</p></div></div><div className="destaque-linha"><span><Globe2 size={20}/></span><div><strong>Perspectiva intercultural</strong><p>Comunicação e aproximação entre culturas.</p></div></div><Link className="botao botao-azul" href="/instituto">Conhecer o Instituto <MoveUpRight size={18}/></Link></div></div></section>
     <SecaoDireccao resumo />
     <section data-reveal className="secao contentor percurso"><div className="secao-cabecalho central"><span className="sobretitulo">COMO COMEÇAR</span><h2>O seu percurso começa com uma escolha.</h2><p>Três passos para encontrar a formação que procura.</p></div><div className="passos-grid">{[{n:"01",titulo:"Escolha o curso",texto:"Explore as línguas e as opções de formação."},{n:"02",titulo:"Encontre a delegação",texto:"Consulte as unidades próximas de si."},{n:"03",titulo:"Informe-se sobre matrículas",texto:"Confirme prazos, requisitos e disponibilidade."}].map(p=><div className="passo" key={p.n}><span>{p.n}</span><h3>{p.titulo}</h3><p>{p.texto}</p></div>)}</div></section>
