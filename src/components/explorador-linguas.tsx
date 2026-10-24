@@ -10,9 +10,8 @@ export function ExploradorLinguas() {
  const curso = cursos.find(c => c.slug === activo) ?? cursos[0];
  return <div className="explorador-linguas">
   <div className="explorador-opcoes" role="group" aria-label="Escolher língua ou formação">
-   {cursos.map(c=><button key={c.slug} type="button" aria-pressed={c.slug===activo} className={c.slug===activo?"explorador-opcao seleccionada":"explorador-opcao"} onClick={()=>definirActivo(c.slug)}>
-    <span className="explorador-simbolo" aria-hidden="true">{c.bandeira ?? <GraduationCap size={24}/>}</span>
-    <span>{c.titulo}</span>
+   {cursos.map(c=><button key={c.slug} type="button" aria-pressed={c.slug===activo} className={`explorador-opcao curso-bloco-${c.slug}${c.slug===activo?" seleccionada":""}`} onClick={()=>definirActivo(c.slug)}>
+    <span className="explorador-opcao-titulo">{c.titulo}</span>
    </button>)}
   </div>
   <div className="explorador-painel" aria-live="polite" key={curso.slug}>
