@@ -11,6 +11,9 @@ export type Curso = {
   icon: string;
   etiqueta: string;
   areas: string[];
+  imagem: string;
+  bandeira: string;
+  pais: string;
 };
 export type Delegacao = { cidade: string; provincia: string };
 export type CategoriaPublicacao = "Notícias" | "Editais e Comunicados" | "Avisos Académicos" | "Eventos";
@@ -24,15 +27,16 @@ export type Noticia = {
   imagem?: string;
   legendaImagem?: string;
   destaque?: boolean;
+  demonstrativo?: boolean;
 };
 
 export const cursos: Curso[] = [
-  { slug: "ingles", titulo: "Inglês", resumo: "Abra portas à comunicação internacional.", descricao: "Um percurso de aprendizagem orientado para a comunicação em contextos pessoais, académicos e profissionais.", icon: "EN", etiqueta: "Línguas internacionais", areas: ["Comunicação", "Compreensão", "Expressão"] },
-  { slug: "frances", titulo: "Francês", resumo: "Amplie o seu horizonte linguístico.", descricao: "Desenvolva competências de compreensão e expressão em francês, com diferentes objectivos de aprendizagem.", icon: "FR", etiqueta: "Línguas internacionais", areas: ["Comunicação", "Compreensão", "Expressão"] },
-  { slug: "portugues", titulo: "Português", resumo: "Comunique com clareza e confiança.", descricao: "Formação dedicada ao aperfeiçoamento da língua portuguesa e das capacidades de comunicação.", icon: "PT", etiqueta: "Línguas internacionais", areas: ["Leitura", "Escrita", "Comunicação"] },
-  { slug: "linguas-mocambicanas", titulo: "Línguas Moçambicanas", resumo: "Valorize a riqueza linguística nacional.", descricao: "Conheça a diversidade linguística de Moçambique através de programas sujeitos a disponibilidade por delegação.", icon: "MZ", etiqueta: "Línguas nacionais", areas: ["Cultura", "Comunicação", "Identidade"] },
-  { slug: "chines", titulo: "Língua e Cultura Chinesa", resumo: "Descubra uma língua e uma cultura globais.", descricao: "Introdução à língua e cultura chinesa, segundo os programas e níveis disponíveis.", icon: "ZH", etiqueta: "Línguas internacionais", areas: ["Língua", "Cultura", "Comunicação"] },
-  { slug: "preparacao-exames", titulo: "Preparação para Exames", resumo: "Prepare-se para certificações internacionais.", descricao: "Programas de preparação para exames de proficiência, incluindo referências a FCE, DELF e DALF. A oferta efectiva requer confirmação.", icon: "EX", etiqueta: "Certificação", areas: ["Preparação", "Avaliação", "Certificação"] }
+  { slug: "ingles", titulo: "Inglês", resumo: "Abra portas à comunicação internacional.", descricao: "Um percurso de aprendizagem orientado para a comunicação em contextos pessoais, académicos e profissionais.", icon: "EN", etiqueta: "Línguas internacionais", areas: ["Comunicação", "Compreensão", "Expressão"], imagem: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=950&q=82", bandeira: "🇬🇧", pais: "Reino Unido" },
+  { slug: "frances", titulo: "Francês", resumo: "Amplie o seu horizonte linguístico.", descricao: "Desenvolva competências de compreensão e expressão em francês, com diferentes objectivos de aprendizagem.", icon: "FR", etiqueta: "Línguas internacionais", areas: ["Comunicação", "Compreensão", "Expressão"], imagem: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=950&q=82", bandeira: "🇫🇷", pais: "França" },
+  { slug: "portugues", titulo: "Português", resumo: "Comunique com clareza e confiança.", descricao: "Formação dedicada ao aperfeiçoamento da língua portuguesa e das capacidades de comunicação.", icon: "PT", etiqueta: "Línguas internacionais", areas: ["Leitura", "Escrita", "Comunicação"], imagem: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=950&q=82", bandeira: "🇲🇿", pais: "Moçambique" },
+  { slug: "linguas-mocambicanas", titulo: "Línguas Moçambicanas", resumo: "Valorize a riqueza linguística nacional.", descricao: "Conheça a diversidade linguística de Moçambique através de programas sujeitos a disponibilidade por delegação.", icon: "MZ", etiqueta: "Línguas nacionais", areas: ["Cultura", "Comunicação", "Identidade"], imagem: "https://images.unsplash.com/photo-1497486751825-1233686d5d80?auto=format&fit=crop&w=950&q=82", bandeira: "🇲🇿", pais: "Moçambique" },
+  { slug: "chines", titulo: "Língua e Cultura Chinesa", resumo: "Descubra uma língua e uma cultura globais.", descricao: "Introdução à língua e cultura chinesa, segundo os programas e níveis disponíveis.", icon: "ZH", etiqueta: "Línguas internacionais", areas: ["Língua", "Cultura", "Comunicação"], imagem: "https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=950&q=82", bandeira: "🇨🇳", pais: "China" },
+  { slug: "preparacao-exames", titulo: "Preparação para Exames", resumo: "Prepare-se para certificações internacionais.", descricao: "Programas de preparação para exames de proficiência, incluindo referências a FCE, DELF e DALF. A oferta efectiva requer confirmação.", icon: "EX", etiqueta: "Certificação", areas: ["Preparação", "Avaliação", "Certificação"], imagem: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=950&q=82", bandeira: "🌐", pais: "Internacional" }
 ];
 
 export const delegacoes: Delegacao[] = [
@@ -63,8 +67,13 @@ export const noticias: Noticia[] = [
     // A data da cerimónia não foi fornecida; não utilizar a data de publicação como data do evento.
     imagem: "/images/noticias/curso-russo-certificados.jpg",
     legendaImagem: "Participantes exibem os certificados do curso de Russo durante a cerimónia de entrega.",
-    destaque: true
-  }
+    destaque: true, demonstrativo: false
+  },
+  { slug: "matriculas-novo-periodo", categoria: "Avisos Académicos", titulo: "Matrículas para o novo período de formação", resumo: "Modelo de aviso sobre requisitos e procedimentos de matrícula.", conteudo: ["Conteúdo demonstrativo criado para apresentar o funcionamento visual do portal.", "Esta actividade não está confirmada. Informações oficiais serão publicadas após validação institucional."], imagem: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=950&q=82", legendaImagem: "Fotografia meramente ilustrativa.", destaque: true, demonstrativo: true },
+  { slug: "jornada-portas-abertas", categoria: "Eventos", titulo: "Jornada de portas abertas em Maputo", resumo: "Modelo de actividade para acolhimento e apresentação de cursos.", conteudo: ["Conteúdo demonstrativo criado para apresentar o funcionamento visual do portal.", "Esta actividade não está confirmada. Informações oficiais serão publicadas após validação institucional."], imagem: "https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=950&q=82", legendaImagem: "Fotografia meramente ilustrativa.", destaque: true, demonstrativo: true },
+  { slug: "edital-actualizacao-cadastro", categoria: "Editais e Comunicados", titulo: "Edital de actualização de dados académicos", resumo: "Modelo de comunicado para procedimentos e serviços académicos.", conteudo: ["Conteúdo demonstrativo criado para apresentar o funcionamento visual do portal.", "Esta actividade não está confirmada. Informações oficiais serão publicadas após validação institucional."], imagem: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=950&q=82", legendaImagem: "Fotografia meramente ilustrativa.", destaque: true, demonstrativo: true },
+  { slug: "acolhimento-novos-estudantes", categoria: "Notícias", titulo: "Sessão de orientação para novos estudantes", resumo: "Modelo de notícia de acolhimento e integração académica.", conteudo: ["Conteúdo demonstrativo criado para apresentar o funcionamento visual do portal.", "Esta actividade não está confirmada. Informações oficiais serão publicadas após validação institucional."], imagem: "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=950&q=82", legendaImagem: "Fotografia meramente ilustrativa.", destaque: true, demonstrativo: true },
+  { slug: "orientacoes-exames-internacionais", categoria: "Avisos Académicos", titulo: "Orientações para exames internacionais", resumo: "Modelo de informação sobre preparação para exames de certificação.", conteudo: ["Conteúdo demonstrativo criado para apresentar o funcionamento visual do portal.", "Esta actividade não está confirmada. Informações oficiais serão publicadas após validação institucional."], imagem: "https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=950&q=82", legendaImagem: "Fotografia meramente ilustrativa.", destaque: true, demonstrativo: true }
 ];
 export const contactosPublicos = {
   endereco: "Av. Ahmed Sekou Touré, n.º 1260, Maputo",
