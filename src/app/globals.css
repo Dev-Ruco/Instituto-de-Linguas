@@ -354,3 +354,12 @@ html.scroll-transicoes-activas [data-scroll-section].scroll-abaixo{
 @keyframes marca-aparecer{from{opacity:0;transform:translateY(9px) scale(.97)}to{opacity:1;transform:none}}
 @media(max-width:620px){.marca-imagem{height:54px;max-width:135px}.rodape-logo-institucional img{width:112px}}
 @media(prefers-reduced-motion:reduce){.marca-imagem{animation:none;transition:none}.rodape-logo-institucional img{transition:none}.marca:hover .marca-imagem,.marca:focus-visible .marca-imagem,.rodape-logo-institucional a:hover img,.rodape-logo-institucional a:focus-visible img{transform:none}}
+
+/* Logótipo institucional: dimensão visível adequada ao nome completo no cabeçalho. */
+.cabecalho .cabecalho-interior{height:116px}
+.cabecalho .marca{flex:0 0 126px;min-width:126px;justify-content:flex-start}
+.cabecalho .marca-imagem{width:116px;height:108px;max-width:none;object-fit:contain;object-position:center}
+.cabecalho.compacto .cabecalho-interior{height:90px}
+.cabecalho.compacto .marca-imagem{height:84px;width:98px}
+@media(max-width:950px){.cabecalho .cabecalho-interior{height:94px}.cabecalho .marca{flex-basis:100px;min-width:100px}.cabecalho .marca-imagem{height:88px;width:94px}.cabecalho.compacto .cabecalho-interior{height:82px}}
+@media(max-width:620px){.cabecalho .cabecalho-interior{height:88px}.cabecalho .marca{flex-basis:90px;min-width:90px}.cabecalho .marca-imagem{height:82px;width:88px}.cabecalho.compacto .cabecalho-interior{height:76px}.cabecalho.compacto .marca-imagem{height:72px;width:78px}}
