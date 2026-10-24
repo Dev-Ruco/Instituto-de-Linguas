@@ -440,3 +440,16 @@ html.scroll-transicoes-activas [data-scroll-section].scroll-abaixo{
 @media(max-width:950px){.noticias-editoriais .carrossel-item{flex-basis:calc((100% - 25px)/2)}}
 @media(max-width:650px){.noticias-editoriais .carrossel-item{flex-basis:100%}.noticias-editoriais .noticia-corpo{padding:20px}.noticias-editoriais .noticia-corpo h3{font-size:18px}}
 @media(prefers-reduced-motion:reduce){.noticias-editoriais .cartao-noticia,.noticias-editoriais .noticia-imagem-ligacao img{transition:none!important}.noticias-editoriais .cartao-noticia:hover{transform:none!important}}
+
+/* Indicadores reais apresentados pelo proponente — substituem os dois elementos sobrepostos do hero. */
+.numeros-institucionais{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;padding-bottom:45px}
+.numero-institucional{display:flex;align-items:flex-start;gap:16px;padding:24px 22px;border:1px solid rgba(255,255,255,.20);border-radius:14px;background:rgba(255,255,255,.09);color:#fff;min-width:0;transition:background .25s ease,transform .25s ease,border-color .25s ease}
+.numero-institucional:hover{background:rgba(255,255,255,.15);transform:translateY(-3px);border-color:rgba(248,196,39,.65)}
+.numero-institucional-icone{display:grid;place-items:center;flex:0 0 43px;width:43px;height:43px;border-radius:11px;background:rgba(248,196,39,.15);color:#f8c427}
+.numero-institucional>div{display:flex;flex-direction:column;min-width:0}
+.numero-institucional-valor{font:800 clamp(31px,3vw,43px)/1 Manrope,Arial,sans-serif;letter-spacing:-.045em;color:#fff;font-variant-numeric:tabular-nums}
+.numero-institucional-titulo{font-weight:800;font-size:13px;margin-top:12px;color:#fff}
+.numero-institucional small{color:#bbcae7;font-size:11px;line-height:1.6;margin-top:6px}
+@media(max-width:850px){.numeros-institucionais{padding-bottom:35px;gap:10px}.numero-institucional{padding:20px 15px;gap:10px}.numero-institucional-icone{flex-basis:35px;width:35px;height:35px}}
+@media(max-width:620px){.numeros-institucionais{grid-template-columns:1fr;gap:12px;padding-bottom:32px}.numero-institucional{padding:19px}.numero-institucional-valor{font-size:34px}}
+@media(prefers-reduced-motion:reduce){.numero-institucional{transition:none!important}.numero-institucional:hover{transform:none!important}}
