@@ -188,3 +188,23 @@ html.motion-ready [data-reveal].is-visible{opacity:1;transform:none;transition:o
 .instituto-fachada-simples img{display:block;width:100%;height:auto;aspect-ratio:2/1;object-fit:cover;border-radius:13px}
 .instituto-fachada-simples figcaption{font-size:12px;color:#728198;margin-top:12px;line-height:1.6}
 @media(max-width:640px){.instituto-fachada-simples{margin-top:26px}.instituto-fachada-simples img{aspect-ratio:4/3;object-fit:cover;object-position:center;border-radius:10px}}
+
+/* Hero: a sequência reinicia a cada entrada na página inicial. */
+.hero .etiqueta-hero,.hero h1,.hero .hero-texto>p,.hero .hero-accoes,.hero .hero-apoio,.hero .hero-visual{animation:none}
+.hero.hero-animar .etiqueta-hero{animation:hero-subir .52s .02s both}
+.hero.hero-animar h1{animation:hero-subir .68s .13s both}
+.hero.hero-animar .hero-texto>p{animation:hero-subir .65s .28s both}
+.hero.hero-animar .hero-accoes{animation:hero-subir .6s .43s both}
+.hero.hero-animar .hero-apoio{animation:hero-subir .6s .60s both}
+.hero.hero-animar .hero-visual{animation:hero-aparecer .85s .25s both}
+.hero.hero-animar .hero-foto{animation:hero-foto-entrada 1.15s .38s both}
+.hero.hero-animar .hero-marcador{animation:hero-cartao-entrada .6s .90s both}
+.hero.hero-animar .hero-ornamento{animation:hero-selo-entrada .6s 1.08s both}
+@keyframes hero-subir{from{opacity:0;transform:translate3d(0,22px,0)}to{opacity:1;transform:none}}
+@keyframes hero-aparecer{from{opacity:0;transform:translate3d(25px,0,0)}to{opacity:1;transform:none}}
+@keyframes hero-foto-entrada{from{opacity:.2;transform:scale(1.045)}to{opacity:1;transform:scale(1)}}
+@keyframes hero-cartao-entrada{from{opacity:0;transform:translate3d(-16px,18px,0)}to{opacity:1;transform:none}}
+@keyframes hero-selo-entrada{from{opacity:0;transform:scale(.82)}to{opacity:1;transform:scale(1)}}
+@media(prefers-reduced-motion:reduce){
+ .hero.hero-animar .etiqueta-hero,.hero.hero-animar h1,.hero.hero-animar .hero-texto>p,.hero.hero-animar .hero-accoes,.hero.hero-animar .hero-apoio,.hero.hero-animar .hero-visual,.hero.hero-animar .hero-foto,.hero.hero-animar .hero-marcador,.hero.hero-animar .hero-ornamento{animation:none!important}
+}

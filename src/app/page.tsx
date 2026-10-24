@@ -3,10 +3,12 @@ import { ArrowRight, ArrowUpRight, BookOpen, Globe2, GraduationCap, MapPinned, M
 import { CartaoCurso } from "@/components/cartao-curso";
 import { Chamada } from "@/components/chamada";
 import { CarrosselNoticias } from "@/components/carrossel-noticias";
+import { AnimacaoHero } from "@/components/animacao-hero";
 import { SecaoDireccao } from "@/components/secao-direccao";
 import { cursos, noticias } from "@/lib/conteudos";
 export default function Inicio() {
   return <>
+    <AnimacaoHero />
     <section className="hero"><div className="contentor hero-grid">
       <div className="hero-texto"><div className="etiqueta-hero"><span className="ponto-amarelo"/> EDUCAÇÃO QUE APROXIMA PESSOAS E CULTURAS</div>
         <h1>Uma nova língua.<br/><em>Um mundo</em> de possibilidades.</h1>
