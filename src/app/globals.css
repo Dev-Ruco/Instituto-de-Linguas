@@ -306,3 +306,12 @@ html.scroll-transicoes-activas [data-scroll-section].scroll-abaixo{
 @media(max-width:850px){.explorador-opcoes{grid-template-columns:repeat(2,minmax(0,1fr))}.explorador-painel{grid-template-columns:minmax(0,1fr) 110px;padding:32px}.explorador-marca{font-size:78px}}
 @media(max-width:570px){.explorador-opcoes{grid-template-columns:repeat(2,minmax(0,1fr))}.explorador-opcao{font-size:12px;padding:14px 10px;gap:7px}.explorador-simbolo{font-size:22px;flex-basis:27px}.explorador-painel{display:block;padding:27px 22px}.explorador-marca{display:none}.catalogo-linha{gap:13px;padding:20px 4px}.catalogo-linha:hover{padding-left:8px}.catalogo-identidade{width:45px;height:45px;font-size:27px}.catalogo-corpo strong{font-size:16px}.catalogo-acao{font-size:0;gap:0}.catalogo-acao svg{width:20px}}
 @media(prefers-reduced-motion:reduce){.explorador-painel{animation:none}.catalogo-linha,.explorador-opcao{transition:none}.catalogo-linha:hover{padding-left:18px}}
+
+/* Cabeçalho dos cursos: marco turístico à direita e legibilidade à esquerda. */
+.curso-hero-fotografico{background-color:#edf3fb;background-size:cover;background-position:center center;background-repeat:no-repeat;min-height:340px;display:flex;align-items:center}
+.curso-hero-fotografico>.contentor{width:100%}
+.curso-hero-fotografico h1,.curso-hero-fotografico p,.curso-hero-fotografico .sobretitulo,.curso-hero-fotografico .voltar{position:relative;z-index:1}
+.curso-hero-fotografico h1{max-width:780px;text-wrap:balance;text-shadow:0 1px 3px rgba(239,244,252,.35)}
+.curso-hero-fotografico p{max-width:580px}
+@media(max-width:700px){.curso-hero-fotografico{min-height:315px;background-position:63% center;background-blend-mode:normal}.curso-hero-fotografico h1{max-width:100%}}
+@media(prefers-reduced-motion:reduce){.curso-hero-fotografico{animation:none!important}}
