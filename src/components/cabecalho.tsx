@@ -22,8 +22,8 @@ export function Cabecalho() {
         <span className="marca-texto"><strong>INSTITUTO DE LÍNGUAS</strong><small>MOÇAMBIQUE</small></span>
       </Link>
       <nav className={aberto ? "navegacao aberta" : "navegacao"} aria-label="Navegação principal" id="menu-principal">
-        {itens.map(item => <Link key={item.href} className={caminho === item.href ? "nav-ligacao activa" : "nav-ligacao"} href={item.href}>{item.titulo}</Link>)}
-        <Link className="botao botao-primario nav-accao" href="/matriculas">Matrículas <ArrowUpRight size={17}/></Link>
+        {itens.map(item => <Link key={item.href} aria-current={caminho === item.href ? "page" : undefined} className={caminho === item.href ? "nav-ligacao activa" : "nav-ligacao"} href={item.href}>{item.titulo}</Link>)}
+        <Link className="botao botao-primario nav-accao" aria-current={caminho === "/matriculas" ? "page" : undefined} href="/matriculas">Matrículas <ArrowUpRight size={17}/></Link>
       </nav>
       <button className="menu-movel" type="button" aria-expanded={aberto} aria-controls="menu-principal" aria-label={aberto ? "Fechar menu" : "Abrir menu"} onClick={() => definirAberto(!aberto)}>{aberto ? <X/> : <Menu/>}</button>
     </div>

@@ -118,3 +118,27 @@ html.motion-ready [data-reveal].is-visible{opacity:1;transform:none;transition:o
 @keyframes progresso-noticias{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 @media(max-width:850px){.cabecalho.compacto .cabecalho-interior{height:64px}.navegacao{top:108px}.cabecalho.compacto .navegacao{top:96px}}
 @media(prefers-reduced-motion:reduce){html.motion-ready [data-reveal],html.motion-ready [data-reveal]:not(.is-visible){opacity:1!important;transform:none!important;transition:none!important}.hero h1,.hero-texto .etiqueta-hero,.hero-texto>p,.hero-accoes,.hero-apoio,.hero-visual,.pagina-hero h1,.pagina-hero p,.navegacao.aberta,.carrossel-progresso>span{animation:none!important}.carrossel-trilho{scroll-behavior:auto}}
+
+/* Menu: aproximação do cursor, pressão e estado da página actual. */
+@media(hover:hover) and (pointer:fine){
+ .navegacao .nav-ligacao{display:inline-block;transition:color .2s ease,transform .22s cubic-bezier(.2,.7,.2,1)}
+ .navegacao .nav-ligacao:hover{transform:translateY(-3px)}
+ .navegacao .nav-ligacao:active{transform:translateY(0) scale(.96)}
+ .navegacao .nav-accao:hover{transform:translateY(-3px)}
+}
+.navegacao .nav-ligacao:active{color:#b18a0f}
+.navegacao .nav-ligacao.activa{color:var(--azul)}
+.navegacao .nav-ligacao.activa::after{background:var(--amarelo);transform:scaleX(1)}
+.navegacao .nav-ligacao:focus-visible{outline:2px solid var(--amarelo);outline-offset:7px;border-radius:2px}
+.navegacao .nav-accao:active{transform:scale(.97)}
+.navegacao .nav-accao[aria-current="page"]{box-shadow:0 0 0 3px rgba(248,196,39,.5)}
+@media(max-width:850px){
+ .navegacao .nav-ligacao{display:block;transition:background .2s ease,color .2s ease,padding-left .2s ease}
+ .navegacao .nav-ligacao:hover,.navegacao .nav-ligacao:focus-visible{background:#f2f6fd;padding-left:20px}
+ .navegacao .nav-ligacao.activa{background:#f1f5fb;border-left:3px solid var(--amarelo)}
+ .navegacao .nav-ligacao::after{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+ .navegacao .nav-ligacao,.navegacao .nav-accao{transition:none!important}
+ .navegacao .nav-ligacao:hover,.navegacao .nav-ligacao:active,.navegacao .nav-accao:hover,.navegacao .nav-accao:active{transform:none!important}
+}
