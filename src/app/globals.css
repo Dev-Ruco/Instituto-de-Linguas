@@ -142,3 +142,25 @@ html.motion-ready [data-reveal].is-visible{opacity:1;transform:none;transition:o
  .navegacao .nav-ligacao,.navegacao .nav-accao{transition:none!important}
  .navegacao .nav-ligacao:hover,.navegacao .nav-ligacao:active,.navegacao .nav-accao:hover,.navegacao .nav-accao:active{transform:none!important}
 }
+
+/* Direcção: organograma demonstrativo, sem atribuição de identidades reais. */
+.direccao-institucional{max-width:1100px}
+.direccao-aviso{background:#f6f8fc;border-left:3px solid #f8c427;color:#63728a;font-size:12px;line-height:1.75;padding:13px 17px;border-radius:0 8px 8px 0;margin-bottom:38px}
+.direccao-organograma{max-width:880px;margin-inline:auto}
+.direccao-nivel{display:flex;justify-content:center;gap:25px}
+.direccao-nivel-principal{max-width:430px;margin-inline:auto}
+.direccao-nivel-secundario .direccao-cartao{flex:1;max-width:425px}
+.direccao-cartao{min-width:0;display:flex;align-items:center;gap:21px;padding:17px;background:white;border:1px solid #e2e9f3;border-radius:15px;box-shadow:0 9px 28px rgba(11,45,113,.04);transition:transform .22s ease,box-shadow .22s ease}
+.direccao-cartao:hover{transform:translateY(-4px);box-shadow:0 15px 35px rgba(11,45,113,.09)}
+.direccao-cartao-principal{width:100%;border-color:#bdcbe2}
+.direccao-retrato{width:100px;height:110px;flex:0 0 100px;background:#ebf0f6;border-radius:9px;overflow:hidden}
+.direccao-retrato img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.75)}
+.direccao-dados{min-width:0}
+.direccao-categoria{font-size:10px;letter-spacing:.07em;font-weight:800;color:#9c7d19}
+.direccao-dados h3{font:800 17px/1.4 Manrope,Arial,sans-serif;letter-spacing:-.025em;color:#0b2d71;margin:9px 0 7px}
+.direccao-dados p{font-size:13px;font-weight:700;color:#64748b;margin:0 0 7px}
+.direccao-dados small{font-size:11px;color:#8996a9}
+.direccao-ligacao-organograma{position:relative;width:2px;height:54px;margin:0 auto;background:#b4c4de}
+.direccao-ligacao-organograma::after{content:"";position:absolute;width:min(450px,calc(100vw - 120px));height:2px;bottom:0;left:50%;transform:translateX(-50%);background:#b4c4de}
+@media(max-width:740px){.direccao-nivel-secundario{flex-direction:column;align-items:stretch}.direccao-nivel-secundario .direccao-cartao{max-width:none}.direccao-ligacao-organograma::after{display:none}.direccao-ligacao-organograma{height:28px}.direccao-cartao{gap:14px}.direccao-retrato{width:88px;height:96px;flex-basis:88px}}
+@media(prefers-reduced-motion:reduce){.direccao-cartao{transition:none}.direccao-cartao:hover{transform:none}}
