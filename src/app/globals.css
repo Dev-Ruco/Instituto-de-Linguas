@@ -602,3 +602,25 @@ html.scroll-transicoes-activas [data-scroll-section].scroll-abaixo{
 @media(max-width:850px){.portal-shell{display:block}.portal-sidebar{position:fixed;z-index:100;left:0;top:0;bottom:0;width:min(290px,85vw);transform:translateX(-105%);transition:transform .25s;box-shadow:12px 0 35px #061e4445}.portal-sidebar.aberto{transform:translateX(0)}.portal-fechar,.portal-menu-movel{display:grid;place-items:center;background:transparent;border:0;color:inherit}.portal-fechar{margin-left:auto}.portal-menu-movel{color:#0b2d71}.portal-topo{padding:0 19px}.portal-pagina{padding:22px 18px}}
 @media(max-width:560px){.portal-metricas{gap:9px}.portal-metrica,.portal-painel{padding:16px}.portal-metrica>strong{font-size:30px}.portal-pagina-cabecalho{align-items:flex-start}.portal-estado{display:none}.portal-regresso{font-size:0}.portal-regresso svg{width:20px}.portal-modulo-topo{display:block}.portal-pesquisa{margin-top:18px}.portal-pesquisa input{width:100%}}
 @media(prefers-reduced-motion:reduce){.portal-sidebar,.portal-menu-item{transition:none}}
+
+/* Portal autónomo: todo o ecrã disponível, independente do menu e rodapé públicos. */
+.portal-main{min-height:100vh;min-height:100dvh;width:100%;min-width:0}
+.portal-main .portal-shell{min-height:100vh;min-height:100dvh}
+.portal-main .portal-conteudo{min-width:0}
+.portal-main .portal-sidebar{min-height:100vh;min-height:100dvh}
+.portal-main .portal-pagina{width:100%;max-width:1440px}
+@media(max-width:850px){
+ .portal-main .portal-sidebar{min-height:0;height:100dvh;overflow-y:auto}
+ .portal-main .portal-sidebar:not(.aberto){pointer-events:none}
+ .portal-main .portal-sidebar.aberto{pointer-events:auto}
+}
+@media(max-width:560px){
+ .portal-main .portal-topo{gap:9px}
+ .portal-main .portal-topo-inicio{min-width:0;gap:6px}
+ .portal-main .portal-topo-inicio>span{display:none}
+ .portal-main .portal-pagina{padding:16px 12px}
+ .portal-main .portal-metricas{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .portal-main .portal-metrica,.portal-main .portal-painel{min-width:0}
+ .portal-main .portal-tabela-cabecalho,.portal-main .portal-tabela-linha{grid-template-columns:minmax(0,1fr) 75px;gap:6px}
+ .portal-main .portal-etiqueta{font-size:9px}
+}

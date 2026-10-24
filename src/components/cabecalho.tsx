@@ -32,7 +32,7 @@ export function Cabecalho() {
        <Link href={item.href} aria-current={activo?"page":undefined} className={activo?"nav-ligacao activa":"nav-ligacao"}>{item.titulo}</Link>
        <button type="button" className="nav-submenu-botao" aria-label={`Mostrar opções de ${item.titulo}`} aria-expanded={submenuAberto===item.href} onClick={()=>definirSubmenuAberto(submenuAberto===item.href?null:item.href)}><ChevronDown size={14}/></button>
        <div className="nav-submenu">{item.submenu.map(sub=><Link key={sub.href} href={sub.href} onClick={()=>{definirAberto(false);definirSubmenuAberto(null)}} className={caminho===sub.href?"nav-submenu-ligacao seleccionada":"nav-submenu-ligacao"}>{sub.titulo}</Link>)}</div>
-      </div> : <Link key={item.href} href={item.href} aria-current={activo?"page":undefined} className={activo?"nav-ligacao activa":"nav-ligacao"}>{item.titulo}</Link>;
+      </div> : <Link key={item.href} href={item.href} target={item.href==="/portal"?"_blank":undefined} rel={item.href==="/portal"?"noopener noreferrer":undefined} aria-current={activo?"page":undefined} className={activo?"nav-ligacao activa":"nav-ligacao"}>{item.titulo}</Link>;
     })}
     <Link className="botao botao-primario nav-accao" aria-current={caminho==="/matriculas"?"page":undefined} href="/matriculas">Matrículas <ArrowUpRight size={17}/></Link>
    </nav>
