@@ -1,9 +1,7 @@
-# Secção Direcção e organização
+# Secção de direcção — apresentação editorial
 
-A secção foi acrescentada a `/instituto#direccao`, depois das áreas de actividade.
+A antiga representação por organograma foi substituída por uma galeria de três cartões fotográficos verticais, com design actual, bordas discretas, área do cargo e animação de hover. A mesma componente é utilizada na página inicial e na página «O Instituto» (âncora `#direccao`).
 
-O organograma e os cargos são demonstrativos: Direcção-Geral, Direcção Pedagógica e Direcção Administrativa. Não se afirma que estes cargos correspondam à estrutura oficial da instituição. Os nomes são apresentados como «Nome a confirmar».
+Os dados estão centralizados em `src/lib/direccao.ts`; trocar por cargos, nomes e fotografias oficiais autorizados quando disponíveis. Os perfis, respectivos cargos, fotografias e áreas são apenas exemplos de demonstração, conforme aviso visível. Não se apresentam identidades falsas como reais.
 
-As três fotografias provêm de URLs externas de imagens ilustrativas e não representam titulares reais. Quando a instituição fornecer organograma, nomes e retratos autorizados, substituir os exemplos e remover o aviso demonstrativo.
-
-O desenho utiliza azul institucional, branco, amarelo pontual e cartões responsivos; respeita a preferência de movimento reduzido.
+Apresentação responsiva em três colunas no computador e uma coluna no telemóvel. Respeita `prefers-reduced-motion` e mantém os movimentos discretos.
