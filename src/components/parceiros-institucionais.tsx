@@ -35,9 +35,9 @@ export function ParceirosInstitucionais() {
           <h2 id="parceiros-titulo">Parceiros e instituições de referência</h2>
           <p>Entidades apresentadas neste protótipo para demonstração da área institucional.</p>
         </div>
-        <div className="parceiros-grelha">
+        <div className="parceiros-faixa">
           {entidades.map((entidade, indice) => (
-            <div className={entidade.largo ? "parceiros-cartao parceiros-cartao-largo" : "parceiros-cartao"} key={entidade.nome} style={{ "--parceiro-indice": indice } as React.CSSProperties}>
+            <div className={entidade.largo ? "parceiro-item parceiro-item-largo" : "parceiro-item"} key={entidade.nome} style={{ "--parceiro-indice": indice } as React.CSSProperties}>
               <img src={entidade.imagem} alt={entidade.nome} loading="lazy" />
             </div>
           ))}

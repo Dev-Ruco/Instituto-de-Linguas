@@ -401,3 +401,16 @@ html.scroll-transicoes-activas [data-scroll-section].scroll-abaixo{
  .parceiros-seccao .parceiros-cabecalho,.parceiros-seccao .parceiros-cartao,.parceiros-seccao .parceiros-cartao img{opacity:1!important;transform:none!important;transition:none!important;filter:none!important}
  .parceiros-seccao .parceiros-cartao:hover img{transform:none!important}
 }
+
+/* Parceiros em linha horizontal com cartões equilibrados; substitui a grelha anterior. */
+.parceiros-faixa{display:grid;grid-template-columns:minmax(0,.86fr) minmax(0,1.12fr) minmax(0,1.35fr);gap:18px;align-items:stretch}
+.parceiros-faixa .parceiro-item{display:flex;justify-content:center;align-items:center;min-width:0;height:155px;padding:23px 20px;border:1px solid #e7edf5;border-radius:14px;background:#f9fbfe;transition:opacity .65s ease,transform .65s cubic-bezier(.2,.7,.2,1),border-color .25s ease,box-shadow .25s ease}
+.parceiros-faixa .parceiro-item img{display:block;max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;transition:transform .3s ease,filter .3s ease}
+.parceiros-faixa .parceiro-item-largo{grid-column:auto;height:155px;padding:24px 20px}
+.parceiros-seccao:not(.parceiros-visiveis) .parceiro-item{opacity:0;transform:translateY(22px)}
+.parceiros-seccao.parceiros-visiveis .parceiro-item{transition-delay:calc(var(--parceiro-indice)*110ms)}
+.parceiros-seccao.parceiros-visiveis .parceiro-item:hover{transform:translateY(-5px);border-color:#c7d6ea;box-shadow:0 14px 32px rgba(11,45,113,.08)}
+.parceiros-faixa .parceiro-item:hover img{transform:scale(1.035);filter:saturate(1.06)}
+@media(max-width:920px){.parceiros-faixa{grid-template-columns:minmax(0,.86fr) minmax(0,1fr) minmax(0,1.3fr);gap:10px}.parceiros-faixa .parceiro-item,.parceiros-faixa .parceiro-item-largo{height:125px;padding:16px 12px}}
+@media(max-width:620px){.parceiros-faixa{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;padding-bottom:9px}.parceiros-faixa .parceiro-item{flex:0 0 245px;scroll-snap-align:start;height:125px;padding:16px}.parceiros-faixa .parceiro-item-largo{flex-basis:305px;height:125px}}
+@media(prefers-reduced-motion:reduce){.parceiros-faixa .parceiro-item,.parceiros-faixa .parceiro-item img{opacity:1!important;transform:none!important;transition:none!important;filter:none!important}}
