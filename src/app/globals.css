@@ -384,3 +384,20 @@ html.scroll-transicoes-activas [data-scroll-section].scroll-abaixo{
  .cabecalho .marca-imagem,.cabecalho.compacto .marca-imagem{height:76px;width:84px}
  .cabecalho .marca,.cabecalho.compacto .marca{flex-basis:90px;min-width:90px}
 }
+
+/* Entrada progressiva da secção institucional, uma vez por visita à página. */
+.parceiros-seccao .parceiros-cabecalho,
+.parceiros-seccao .parceiros-cartao{transition:opacity .65s ease,transform .65s cubic-bezier(.2,.7,.2,1)}
+.parceiros-seccao:not(.parceiros-visiveis) .parceiros-cabecalho{opacity:0;transform:translateY(16px)}
+.parceiros-seccao:not(.parceiros-visiveis) .parceiros-cartao{opacity:0;transform:translateY(24px)}
+.parceiros-seccao.parceiros-visiveis .parceiros-cartao{transition-delay:calc(var(--parceiro-indice)*110ms)}
+.parceiros-seccao.parceiros-visiveis .parceiros-cartao:hover{transform:translateY(-5px);border-color:#bbcee6;box-shadow:0 14px 32px rgba(11,45,113,.10)}
+.parceiros-seccao .parceiros-cartao img{transition:transform .36s ease,filter .36s ease;filter:saturate(.94)}
+.parceiros-seccao .parceiros-cartao:hover img{transform:scale(1.045);filter:saturate(1.09)}
+.parceiros-grelha .parceiros-cartao-largo{grid-column:1/-1;height:168px;padding:26px 44px}
+.parceiros-grelha .parceiros-cartao-largo img{max-width:min(100%,720px);max-height:100%}
+@media(max-width:620px){.parceiros-grelha .parceiros-cartao-largo{height:133px;padding:20px 16px}}
+@media(prefers-reduced-motion:reduce){
+ .parceiros-seccao .parceiros-cabecalho,.parceiros-seccao .parceiros-cartao,.parceiros-seccao .parceiros-cartao img{opacity:1!important;transform:none!important;transition:none!important;filter:none!important}
+ .parceiros-seccao .parceiros-cartao:hover img{transform:none!important}
+}

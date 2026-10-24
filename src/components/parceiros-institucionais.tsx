@@ -1,12 +1,34 @@
-/** Logótipos fornecidos para composição demonstrativa; parcerias sujeitas a confirmação. */
+"use client";
+import { useEffect, useRef, useState } from "react";
+
+/** Logótipos usados na demonstração; a presença não confirma credenciamento. */
 const entidades = [
   { nome: "Ministério da Educação e Cultura", imagem: "/images/instituto/mec-mocambique.webp" },
   { nome: "Cambridge English", imagem: "/images/instituto/cambridge-english.webp" },
+  { nome: "DELF/DALF — Centro Autorizado de Exames da Língua Francesa", imagem: "/images/instituto/delf-dalf-centro-exames.webp", largo: true },
 ];
 
 export function ParceirosInstitucionais() {
+  const referencia = useRef<HTMLElement>(null);
+  const [visivel, definirVisivel] = useState(false);
+  useEffect(() => {
+    const elemento = referencia.current;
+    if (!elemento) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || !("IntersectionObserver" in window)) {
+      definirVisivel(true);
+      return;
+    }
+    const observador = new IntersectionObserver(([entrada]) => {
+      if (entrada.isIntersecting) {
+        definirVisivel(true);
+        observador.disconnect();
+      }
+    }, { threshold: 0.15 });
+    observador.observe(elemento);
+    return () => observador.disconnect();
+  }, []);
   return (
-    <section className="parceiros-seccao" aria-labelledby="parceiros-titulo">
+    <section ref={referencia} className={visivel ? "parceiros-seccao parceiros-visiveis" : "parceiros-seccao"} aria-labelledby="parceiros-titulo">
       <div className="contentor">
         <div className="parceiros-cabecalho">
           <span className="sobretitulo">RELAÇÕES INSTITUCIONAIS</span>
@@ -14,8 +36,8 @@ export function ParceirosInstitucionais() {
           <p>Entidades apresentadas neste protótipo para demonstração da área institucional.</p>
         </div>
         <div className="parceiros-grelha">
-          {entidades.map(entidade => (
-            <div className="parceiros-cartao" key={entidade.nome}>
+          {entidades.map((entidade, indice) => (
+            <div className={entidade.largo ? "parceiros-cartao parceiros-cartao-largo" : "parceiros-cartao"} key={entidade.nome} style={{ "--parceiro-indice": indice } as React.CSSProperties}>
               <img src={entidade.imagem} alt={entidade.nome} loading="lazy" />
             </div>
           ))}
