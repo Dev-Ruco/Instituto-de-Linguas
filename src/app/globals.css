@@ -84,3 +84,19 @@
 .cartao-curso-editorial:hover .curso-bandeira{transform:scale(1.06)}
 .curso-exame-simbolo{z-index:1;display:grid;place-items:center;color:#0b2d71;background:#fff;border-radius:50%;width:116px;height:116px;box-shadow:0 10px 30px rgba(11,45,113,.10)}
 @media(max-width:570px){.curso-bandeira{font-size:108px}}
+
+/* Carrossel de notícias: três cartões, deslocação automática e pausa por hover/foco. */
+.carrossel-noticias{width:100%;min-width:0}
+.carrossel-trilho{display:flex;gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;overscroll-behavior-x:contain;padding:5px 2px 17px}
+.carrossel-trilho::-webkit-scrollbar{display:none}
+.carrossel-item{flex:0 0 calc((100% - 48px)/3);min-width:0;scroll-snap-align:start;display:flex}
+.carrossel-item .cartao-noticia{width:100%}
+.carrossel-controlos{display:flex;align-items:center;justify-content:space-between;gap:15px;padding-top:7px}
+.carrossel-indicacao{color:#6a7890;font-size:12px}
+.carrossel-botoes{display:flex;gap:9px}
+.carrossel-botoes button{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;border:1px solid #dbe3ee;background:#fff;color:#0b2d71}
+.carrossel-botoes button:hover:not(:disabled){background:#0b2d71;color:#fff}
+.carrossel-botoes button:disabled{opacity:.4;cursor:not-allowed}
+@media(max-width:850px){.carrossel-item{flex-basis:calc((100% - 24px)/2)}}
+@media(max-width:570px){.carrossel-item{flex-basis:100%}.carrossel-indicacao{font-size:11px}}
+@media(prefers-reduced-motion:reduce){.carrossel-trilho{scroll-behavior:auto}}
