@@ -1,0 +1,13 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: il_gestao
+      POSTGRES_USER: il_app
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-senha_local_apenas_dev}
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - postgres_il:/var/lib/postgresql/data
+volumes:
+  postgres_il:
