@@ -1,7 +1,7 @@
-# Fotografia institucional — mockup
+# Fachada institucional
 
-A secção da fachada está integrada na página inicial e em `/instituto#instalacoes`. A composição usa fotografia em grande formato, gradiente azul institucional, chamada de atenção e botão de acesso à página «O Instituto».
+A página «O Instituto» apresenta agora a fotografia imediatamente abaixo do cabeçalho introdutório, sem textos nem gradientes sobre a imagem. A seguir surge a secção «A nossa apresentação», depois as áreas de actividade e os responsáveis.
 
-A imagem enviada pelo utilizador deve ser colocada em `public/images/instituto/fachada-instituto.jpg`. Até esse ficheiro existir, o componente mostra um fundo azul de reserva — nunca uma fotografia externa enganadora. Por razões de largura de banda, recomenda-se JPEG/WebP optimizado.
+A página inicial mantém a fotografia na secção existente «Sobre o Instituto», sem duplicação de blocos.
 
-A imagem é de referência do protótipo; confirmar autorização e legenda antes de publicação institucional definitiva. O desenho responde a dispositivos móveis e respeita redução de movimento.
+Ficheiro: `public/images/instituto/fachada-instituto.jpg`. Imagem apresentada como referência provisória, a confirmar editorialmente antes de publicar o portal oficial.
