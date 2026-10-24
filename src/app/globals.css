@@ -363,3 +363,24 @@ html.scroll-transicoes-activas [data-scroll-section].scroll-abaixo{
 .cabecalho.compacto .marca-imagem{height:84px;width:98px}
 @media(max-width:950px){.cabecalho .cabecalho-interior{height:94px}.cabecalho .marca{flex-basis:100px;min-width:100px}.cabecalho .marca-imagem{height:88px;width:94px}.cabecalho.compacto .cabecalho-interior{height:82px}}
 @media(max-width:620px){.cabecalho .cabecalho-interior{height:88px}.cabecalho .marca{flex-basis:90px;min-width:90px}.cabecalho .marca-imagem{height:82px;width:88px}.cabecalho.compacto .cabecalho-interior{height:76px}.cabecalho.compacto .marca-imagem{height:72px;width:78px}}
+
+/* Estabilidade durante o scroll: cabeçalho sem alterações de altura.
+   Evita que o conteúdo/hero salte ou pareça encolher ao cruzar 64px. */
+.cabecalho .cabecalho-interior,
+.cabecalho.compacto .cabecalho-interior{height:106px;transition:none}
+.cabecalho .marca-imagem,
+.cabecalho.compacto .marca-imagem{height:98px;width:108px;max-width:none}
+.cabecalho .marca,
+.cabecalho.compacto .marca{flex:0 0 116px;min-width:116px}
+.cabecalho .navegacao,
+.cabecalho.compacto .navegacao{top:100%}
+@media(max-width:950px){
+ .cabecalho .cabecalho-interior,.cabecalho.compacto .cabecalho-interior{height:88px}
+ .cabecalho .marca-imagem,.cabecalho.compacto .marca-imagem{height:82px;width:92px}
+ .cabecalho .marca,.cabecalho.compacto .marca{flex-basis:98px;min-width:98px}
+}
+@media(max-width:620px){
+ .cabecalho .cabecalho-interior,.cabecalho.compacto .cabecalho-interior{height:82px}
+ .cabecalho .marca-imagem,.cabecalho.compacto .marca-imagem{height:76px;width:84px}
+ .cabecalho .marca,.cabecalho.compacto .marca{flex-basis:90px;min-width:90px}
+}
