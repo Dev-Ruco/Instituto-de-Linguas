@@ -75,3 +75,12 @@
 .curso-editorial-rodape svg{transition:transform .2s}
 .cartao-curso-editorial:hover .curso-editorial-rodape svg{transform:translate(2px,-2px)}
 @media(max-width:570px){.curso-editorial-conteudo{padding:22px 22px 20px}.cartao-curso-editorial .curso-editorial-conteudo h3{font-size:20px}}
+
+/* Bandeiras para identificação imediata dos cursos, sem fotografias ou ilustrações. */
+.curso-bandeira-fundo{display:grid;place-items:center;background:linear-gradient(135deg,#eaf0fa 0%,#f6f8fc 70%,#e9eef9 100%);isolation:isolate}
+.curso-bandeira-fundo::before{content:"";position:absolute;width:76%;aspect-ratio:1;border-radius:50%;border:1px solid rgba(11,45,113,.10)}
+.curso-bandeira-fundo::after{content:"";position:absolute;bottom:0;left:0;right:0;height:5px;background:linear-gradient(90deg,#0b2d71 0 76%,#f8c427 76% 100%)}
+.curso-bandeira{position:relative;z-index:1;font-size:clamp(75px,9vw,125px);line-height:1;filter:drop-shadow(0 8px 15px rgba(11,45,113,.14));transition:transform .25s ease}
+.cartao-curso-editorial:hover .curso-bandeira{transform:scale(1.06)}
+.curso-exame-simbolo{z-index:1;display:grid;place-items:center;color:#0b2d71;background:#fff;border-radius:50%;width:116px;height:116px;box-shadow:0 10px 30px rgba(11,45,113,.10)}
+@media(max-width:570px){.curso-bandeira{font-size:108px}}

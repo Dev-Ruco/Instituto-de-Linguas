@@ -11,7 +11,7 @@ export type Curso = {
   icon: string;
   etiqueta: string;
   areas: string[];
-  imagem: string;
+  bandeira?: string;
 };
 export type Delegacao = { cidade: string; provincia: string };
 export type CategoriaPublicacao = "Notícias" | "Editais e Comunicados" | "Avisos Académicos" | "Eventos";
@@ -29,12 +29,12 @@ export type Noticia = {
 };
 
 export const cursos: Curso[] = [
-  { slug: "ingles", titulo: "Inglês", resumo: "Abra portas à comunicação internacional.", descricao: "Um percurso de aprendizagem orientado para a comunicação em contextos pessoais, académicos e profissionais.", icon: "EN", etiqueta: "Línguas internacionais", areas: ["Comunicação", "Compreensão", "Expressão"], imagem: "https://images.pexels.com/photos/29242202/pexels-photo-29242202.jpeg?auto=compress&cs=tinysrgb&w=1000" },
-  { slug: "frances", titulo: "Francês", resumo: "Amplie o seu horizonte linguístico.", descricao: "Desenvolva competências de compreensão e expressão em francês, com diferentes objectivos de aprendizagem.", icon: "FR", etiqueta: "Línguas internacionais", areas: ["Comunicação", "Compreensão", "Expressão"], imagem: "https://images.pexels.com/photos/39523813/pexels-photo-39523813.jpeg?auto=compress&cs=tinysrgb&w=1000" },
-  { slug: "portugues", titulo: "Português", resumo: "Comunique com clareza e confiança.", descricao: "Formação dedicada ao aperfeiçoamento da língua portuguesa e das capacidades de comunicação.", icon: "PT", etiqueta: "Línguas internacionais", areas: ["Leitura", "Escrita", "Comunicação"], imagem: "https://images.pexels.com/photos/34211750/pexels-photo-34211750.jpeg?auto=compress&cs=tinysrgb&w=1000" },
-  { slug: "linguas-mocambicanas", titulo: "Línguas Moçambicanas", resumo: "Valorize a riqueza linguística nacional.", descricao: "Conheça a diversidade linguística de Moçambique através de programas sujeitos a disponibilidade por delegação.", icon: "MZ", etiqueta: "Línguas nacionais", areas: ["Cultura", "Comunicação", "Identidade"], imagem: "https://images.pexels.com/photos/28593054/pexels-photo-28593054.jpeg?auto=compress&cs=tinysrgb&w=1000" },
-  { slug: "chines", titulo: "Língua e Cultura Chinesa", resumo: "Descubra uma língua e uma cultura globais.", descricao: "Introdução à língua e cultura chinesa, segundo os programas e níveis disponíveis.", icon: "ZH", etiqueta: "Línguas internacionais", areas: ["Língua", "Cultura", "Comunicação"], imagem: "https://images.pexels.com/photos/33175754/pexels-photo-33175754.jpeg?auto=compress&cs=tinysrgb&w=1000" },
-  { slug: "preparacao-exames", titulo: "Preparação para Exames", resumo: "Prepare-se para certificações internacionais.", descricao: "Programas de preparação para exames de proficiência, incluindo referências a FCE, DELF e DALF. A oferta efectiva requer confirmação.", icon: "EX", etiqueta: "Certificação", areas: ["Preparação", "Avaliação", "Certificação"], imagem: "https://images.pexels.com/photos/37456293/pexels-photo-37456293.jpeg?auto=compress&cs=tinysrgb&w=1000" }
+  { slug: "ingles", titulo: "Inglês", resumo: "Abra portas à comunicação internacional.", descricao: "Um percurso de aprendizagem orientado para a comunicação em contextos pessoais, académicos e profissionais.", icon: "EN", etiqueta: "Línguas internacionais", areas: ["Comunicação", "Compreensão", "Expressão"], bandeira: "🇬🇧" },
+  { slug: "frances", titulo: "Francês", resumo: "Amplie o seu horizonte linguístico.", descricao: "Desenvolva competências de compreensão e expressão em francês, com diferentes objectivos de aprendizagem.", icon: "FR", etiqueta: "Línguas internacionais", areas: ["Comunicação", "Compreensão", "Expressão"], bandeira: "🇫🇷" },
+  { slug: "portugues", titulo: "Português", resumo: "Comunique com clareza e confiança.", descricao: "Formação dedicada ao aperfeiçoamento da língua portuguesa e das capacidades de comunicação.", icon: "PT", etiqueta: "Línguas internacionais", areas: ["Leitura", "Escrita", "Comunicação"], bandeira: "🇵🇹" },
+  { slug: "linguas-mocambicanas", titulo: "Línguas Moçambicanas", resumo: "Valorize a riqueza linguística nacional.", descricao: "Conheça a diversidade linguística de Moçambique através de programas sujeitos a disponibilidade por delegação.", icon: "MZ", etiqueta: "Línguas nacionais", areas: ["Cultura", "Comunicação", "Identidade"], bandeira: "🇲🇿" },
+  { slug: "chines", titulo: "Língua e Cultura Chinesa", resumo: "Descubra uma língua e uma cultura globais.", descricao: "Introdução à língua e cultura chinesa, segundo os programas e níveis disponíveis.", icon: "ZH", etiqueta: "Línguas internacionais", areas: ["Língua", "Cultura", "Comunicação"], bandeira: "🇨🇳" },
+  { slug: "preparacao-exames", titulo: "Preparação para Exames", resumo: "Prepare-se para certificações internacionais.", descricao: "Programas de preparação para exames de proficiência, incluindo referências a FCE, DELF e DALF. A oferta efectiva requer confirmação.", icon: "EX", etiqueta: "Certificação", areas: ["Preparação", "Avaliação", "Certificação"] }
 ];
 
 export const delegacoes: Delegacao[] = [
