@@ -325,3 +325,22 @@ html.scroll-transicoes-activas [data-scroll-section].scroll-abaixo{
 .curso-hero-fotografico .voltar:hover{color:#fff}
 .curso-hero-fotografico .sobretitulo{color:#f8c427}
 @media(max-width:620px){.curso-hero-fotografico>.contentor{width:min(100% - 34px,1180px)}}
+
+/* Navegação leve entre programas, fora da área fotográfica. */
+.navegacao-entre-cursos{background:#fff;border-bottom:1px solid #e3eaf3}
+.navegacao-entre-cursos-interior{display:flex;align-items:center;gap:22px;min-width:0}
+.navegacao-entre-cursos-rotulo{font:800 11px Manrope,Arial,sans-serif;white-space:nowrap;color:#7585a0}
+.navegacao-entre-cursos-lista{display:flex;align-items:stretch;gap:6px;overflow-x:auto;scrollbar-width:thin;-webkit-overflow-scrolling:touch;min-width:0}
+.navegacao-curso{display:flex;align-items:center;padding:19px 13px 17px;border-bottom:3px solid transparent;white-space:nowrap;font-size:12px;font-weight:700;color:#61728c;transition:color .2s,border-color .2s}
+.navegacao-curso:hover{color:#0b2d71}
+.navegacao-curso.activo{border-bottom-color:#f8c427;color:#0b2d71;font-weight:800}
+.navegacao-curso:focus-visible,.curso-proximo-ligacao:focus-visible{outline:3px solid #f8c427;outline-offset:-3px}
+.curso-proximo{padding-bottom:76px}
+.curso-proximo-ligacao{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:25px 30px;border-top:1px solid #dce5f1;border-bottom:1px solid #dce5f1;color:#0b2d71;transition:background .2s}
+.curso-proximo-ligacao:hover{background:#f5f8fc}
+.curso-proximo-ligacao>span{display:flex;flex-direction:column;gap:8px}
+.curso-proximo-ligacao small{letter-spacing:.1em;color:#8190a7;font-weight:800;font-size:10px}
+.curso-proximo-ligacao strong{font:800 23px Manrope,Arial,sans-serif}
+.curso-proximo-ligacao span span{color:#708199;font-size:12px}
+@media(max-width:700px){.navegacao-entre-cursos-interior{display:block}.navegacao-entre-cursos-rotulo{display:block;padding-top:15px}.navegacao-curso{padding:15px 12px 13px}.curso-proximo{padding-bottom:48px}.curso-proximo-ligacao{padding:22px 12px}.curso-proximo-ligacao strong{font-size:19px}}
+@media(prefers-reduced-motion:reduce){.navegacao-curso,.curso-proximo-ligacao{transition:none}}
