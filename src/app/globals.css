@@ -163,3 +163,19 @@ html.motion-ready [data-reveal].is-visible{opacity:1;transform:none;transition:o
 @media(max-width:850px){.direccao-galeria{gap:15px}.dir-info{padding:19px}.dir-info h3{font-size:17px}.dir-fotografia{aspect-ratio:3/4}}
 @media(max-width:640px){.direccao-galeria{grid-template-columns:1fr;max-width:440px;margin-inline:auto;gap:20px}.dir-fotografia{aspect-ratio:5/4}.dir-info{padding:20px}.dir-info h3{font-size:20px}.direccao-home{padding-block:70px}}
 @media(prefers-reduced-motion:reduce){.dir-perfil,.dir-fotografia img{transition:none!important}.dir-perfil:hover,.dir-perfil:hover .dir-fotografia img{transform:none!important}}
+
+/* Fachada do Instituto — bloco fotográfico editorial com texto sobreposto. */
+.fachada-instituto{padding:80px 0;scroll-margin-top:105px}
+.fachada-home{padding-bottom:0}
+.fachada-painel{min-height:445px;position:relative;display:flex;align-items:flex-end;isolation:isolate;overflow:hidden;border-radius:18px;background:#123b76}
+.fachada-fotografia{position:absolute;inset:0;z-index:-2;background:#123b76 url("/images/instituto/fachada-instituto.jpg") center center/cover no-repeat;transition:transform .75s ease}
+.fachada-painel:hover .fachada-fotografia{transform:scale(1.025)}
+.fachada-gradiente{position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(4,23,58,.90) 0%,rgba(4,23,58,.67) 45%,rgba(4,23,58,.08) 100%)}
+.fachada-texto{position:relative;max-width:670px;padding:58px 62px 63px;color:white}
+.fachada-sobretitulo{display:inline-flex;gap:10px;align-items:center;color:#ffe08a;font-size:11px;font-weight:800;letter-spacing:.11em}
+.fachada-texto h2{font:800 clamp(30px,3.5vw,45px)/1.2 Manrope,Arial,sans-serif;letter-spacing:-.04em;margin:17px 0;color:white}
+.fachada-texto p{font-size:15px;line-height:1.85;color:#e2eaf7;max-width:490px;margin:0 0 26px}
+.fachada-texto p:last-child{margin-bottom:0}
+.fachada-marcacao{position:absolute;bottom:19px;right:22px;color:#fff;background:rgba(4,24,58,.65);font-size:10px;letter-spacing:.03em;padding:7px 11px;border-radius:4px}
+@media(max-width:740px){.fachada-instituto{padding:55px 0}.fachada-home{padding-bottom:0}.fachada-painel{min-height:430px}.fachada-fotografia{background-position:center}.fachada-gradiente{background:linear-gradient(0deg,rgba(4,23,58,.94),rgba(4,23,58,.5) 65%,rgba(4,23,58,.12))}.fachada-texto{padding:90px 26px 65px}.fachada-texto p{font-size:13px}.fachada-marcacao{right:14px;bottom:12px;font-size:9px}}
+@media(prefers-reduced-motion:reduce){.fachada-fotografia{transition:none!important}.fachada-painel:hover .fachada-fotografia{transform:none!important}}
