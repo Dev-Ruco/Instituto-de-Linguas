@@ -51,3 +51,27 @@
 .noticias-grid .noticia-corpo h3{font-size:17px;line-height:1.35}
 .noticias-grid .noticia-imagem-ligacao{aspect-ratio:16/10}
 @media(max-width:570px){.cartao-curso-foto{min-height:395px}.curso-foto-conteudo{padding:24px}}
+
+
+/* Cartões de cursos — opção B: imagem superior e conteúdo separado. */
+.cartao-curso-editorial{
+  display:flex;flex-direction:column;min-height:0;padding:0;
+  overflow:hidden;border:1px solid #e3eaf3;border-radius:14px;
+  background:#fff;color:var(--texto);isolation:auto;
+  transition:border-color .2s ease,box-shadow .2s ease,transform .2s ease;
+}
+.cartao-curso-editorial:hover{border-color:#b8c9e4;box-shadow:0 14px 34px rgba(11,45,113,.10);transform:translateY(-3px)}
+.curso-editorial-imagem{position:relative;aspect-ratio:16/10;overflow:hidden;background:#eaf0f6;flex:none}
+.curso-editorial-imagem img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .3s ease}
+.cartao-curso-editorial:hover .curso-editorial-imagem img{transform:scale(1.025)}
+.curso-editorial-conteudo{padding:25px 25px 21px;display:flex;flex:1;flex-direction:column;align-items:stretch}
+.curso-editorial-categoria{font-size:10px;font-weight:800;letter-spacing:.11em;text-transform:uppercase;color:#677b9b}
+.cartao-curso-editorial .curso-editorial-conteudo h3{
+ font:800 21px/1.35 Manrope,Arial,sans-serif;letter-spacing:-.035em;
+ color:#0b2d71;margin:12px 0 10px;
+}
+.cartao-curso-editorial .curso-editorial-conteudo p{font-size:13px;line-height:1.7;color:#6a7890;margin:0 0 24px}
+.curso-editorial-rodape{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:auto;padding-top:16px;border-top:1px solid #e8edf4;font-size:13px;font-weight:800;color:#0b2d71}
+.curso-editorial-rodape svg{transition:transform .2s}
+.cartao-curso-editorial:hover .curso-editorial-rodape svg{transform:translate(2px,-2px)}
+@media(max-width:570px){.curso-editorial-conteudo{padding:22px 22px 20px}.cartao-curso-editorial .curso-editorial-conteudo h3{font-size:20px}}

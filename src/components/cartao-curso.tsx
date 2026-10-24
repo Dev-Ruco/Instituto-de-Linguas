@@ -1,11 +1,30 @@
 import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import type { Curso } from "@/lib/conteudos";
-/** Cartão fotográfico: a língua é identificada pelo título, sem bandeiras nem ícones de países. */
-export function CartaoCurso({curso}:{curso:Curso;indice?:number}){
- return <Link className="cartao-curso cartao-curso-foto" href={`/cursos/${curso.slug}`}>
- <img className="curso-foto" src={curso.imagem} alt={`Fotografia ilustrativa: ${curso.titulo}`} loading="lazy"/>
- <span className="curso-foto-sombra" aria-hidden="true"/>
- <div className="curso-foto-conteudo">
- <h3>{curso.titulo}</h3><p>{curso.resumo}</p><span className="curso-foto-ligacao">Saber mais <span aria-hidden="true">→</span></span>
- </div></Link>;
+
+/**
+ * Apresenta um curso com fotografia superior e informações em fundo branco.
+ * Não apresenta preços, horários ou níveis sem confirmação institucional.
+ */
+export function CartaoCurso({ curso }: { curso: Curso; indice?: number }) {
+  return (
+    <Link className="cartao-curso cartao-curso-editorial" href={`/cursos/${curso.slug}`}>
+      <div className="curso-editorial-imagem">
+        <img
+          src={curso.imagem}
+          alt={`Imagem ilustrativa do curso de ${curso.titulo}`}
+          loading="lazy"
+        />
+      </div>
+      <div className="curso-editorial-conteudo">
+        <span className="curso-editorial-categoria">{curso.etiqueta}</span>
+        <h3>{curso.titulo}</h3>
+        <p>{curso.resumo}</p>
+        <span className="curso-editorial-rodape">
+          <span>Conhecer o curso</span>
+          <ArrowUpRight size={19} aria-hidden="true" />
+        </span>
+      </div>
+    </Link>
+  );
 }
