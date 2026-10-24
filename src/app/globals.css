@@ -230,3 +230,37 @@ html.scroll-transicoes-activas [data-scroll-section].scroll-abaixo{
 @media(prefers-reduced-motion:reduce){
   html.scroll-transicoes-activas [data-scroll-section]{opacity:1!important;transform:none!important;transition:none!important}
 }
+
+/* Biblioteca de documentos — pesquisa, filtros e disponibilidade real dos PDF. */
+.documentos-introducao{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:22px}
+.documentos-introducao>p{max-width:430px;color:#728198;font-size:13px;line-height:1.75}
+.documentos-aviso{background:#f7f9fc;border-left:3px solid #f8c427;border-radius:0 8px 8px 0;padding:14px 18px;color:#697a91;font-size:12px;line-height:1.7;margin-bottom:27px}
+.documentos-barra{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.documentos-pesquisa{display:flex;align-items:center;gap:13px;flex:1;max-width:640px;border:1px solid #dce4ef;background:#fff;padding:0 17px;border-radius:10px;color:#7b8ca3}
+.documentos-pesquisa:focus-within{border-color:#0b2d71;box-shadow:0 0 0 3px #0b2d7114}
+.documentos-pesquisa input{min-width:0;width:100%;height:51px;border:0;outline:0;background:transparent;color:#17243d;font-size:13px}
+.documentos-contagem{display:flex;gap:8px;align-items:center;font-size:12px;color:#71839a;white-space:nowrap}
+.documentos-categorias{display:flex;flex-wrap:wrap;gap:9px;margin:23px 0 30px}
+.documentos-filtro{border:1px solid #e1e7f0;border-radius:30px;background:#fff;padding:10px 15px;color:#52647f;font-size:12px;font-weight:700;transition:background .2s,color .2s,border-color .2s}
+.documentos-filtro:hover{border-color:#a8b9d6}
+.documentos-filtro.activo{color:white;background:#0b2d71;border-color:#0b2d71}
+.documentos-grelha{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.documento-cartao{min-width:0;display:flex;flex-direction:column;align-items:flex-start;border:1px solid #e4eaf3;border-radius:14px;background:#fff;padding:26px;transition:box-shadow .24s,transform .24s,border-color .24s}
+.documento-cartao:hover{transform:translateY(-3px);box-shadow:0 15px 36px #0b2d7113;border-color:#bdcee7}
+.documento-topo{display:flex;align-items:flex-start;justify-content:space-between;width:100%;margin-bottom:27px}
+.documento-icone{width:58px;height:58px;display:grid;place-items:center;border-radius:12px;background:#edf2fa;color:#0b2d71}
+.documento-formato{font-size:10px;letter-spacing:.09em;font-weight:800;color:#a27c0c;background:#fff6d9;padding:7px 9px;border-radius:5px}
+.documento-categoria{text-transform:uppercase;letter-spacing:.09em;font-size:10px;font-weight:800;color:#8290a5}
+.documento-cartao h2{font:800 19px/1.4 Manrope,Arial,sans-serif;color:#123366;letter-spacing:-.025em;margin:10px 0}
+.documento-cartao>p{color:#708097;font-size:13px;line-height:1.75;margin:0 0 26px}
+.documento-rodape{margin-top:auto;width:100%;padding-top:17px;border-top:1px solid #e9edf4;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.documento-pendente{font-size:12px;color:#8291a4;font-weight:700}
+.documento-descarregar{display:inline-flex;gap:8px;align-items:center;color:#0b2d71;font-size:12px;font-weight:800}
+.documento-descarregar:hover{text-decoration:underline}
+.documento-data{display:flex;align-items:center;gap:6px;color:#8a98a9;font-size:11px}
+.documentos-vazio{border:1px dashed #cbd7e7;text-align:center;padding:55px 20px;border-radius:13px;color:#62738a}
+.documentos-vazio h2{font-size:18px;color:#173969}.documentos-vazio button{background:#0b2d71;color:#fff;border:0;border-radius:7px;padding:10px 16px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:950px){.documentos-grelha{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.documentos-grelha{grid-template-columns:1fr}.documentos-introducao{display:block}.documentos-barra{align-items:stretch;flex-direction:column;gap:12px}.documentos-contagem{align-self:flex-end}}
+@media(prefers-reduced-motion:reduce){.documento-cartao,.documentos-filtro{transition:none!important}.documento-cartao:hover{transform:none!important}}

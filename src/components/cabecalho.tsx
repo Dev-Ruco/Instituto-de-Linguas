@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 const itens = [
   { titulo:"Início", href:"/" }, { titulo:"O Instituto", href:"/instituto" },
   { titulo:"Cursos", href:"/cursos" }, { titulo:"Delegações", href:"/delegacoes" },
-  { titulo:"Notícias", href:"/noticias" }, { titulo:"Contactos", href:"/contactos" }
+  { titulo:"Notícias", href:"/noticias" }, { titulo:"Documentos", href:"/documentos" }, { titulo:"Contactos", href:"/contactos" }
 ];
 export function Cabecalho() {
   const [aberto, definirAberto] = useState(false);
