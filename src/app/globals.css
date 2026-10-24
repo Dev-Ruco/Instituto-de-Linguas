@@ -5,3 +5,31 @@
 @media(max-width:850px){.cabecalho-interior{height:76px}.menu-movel{display:block}.navegacao{display:none;position:absolute;left:0;right:0;top:108px;background:#fff;box-shadow:0 22px 30px #071e4b16;padding:22px 28px;flex-direction:column;align-items:stretch;gap:0}.navegacao.aberta{display:flex}.nav-ligacao{padding:14px;border-bottom:1px solid #edf0f4}.nav-accao{margin-top:18px}.hero-grid{grid-template-columns:1fr;gap:0;padding-bottom:35px}.hero-texto{padding:65px 0 15px}.hero-visual{min-height:350px;max-width:650px;width:100%;padding:15px 0 30px}.hero-foto{height:360px;border-radius:120px 15px 15px 15px}.hero-marcador{bottom:9px;left:20px}.hero-ornamento{right:0}.cursos-grid,.delegacoes-grid{grid-template-columns:repeat(2,1fr)}.destaque-grid,.conteudo-instituto,.contactos-grid{grid-template-columns:1fr;gap:40px}.imagem-destaque{min-height:390px}.rodape-grid{grid-template-columns:repeat(2,1fr);gap:36px}.chamada-bloco{grid-template-columns:1fr}.chamada-ilustracao{display:none}.detalhe-grid{grid-template-columns:1fr}.tres-colunas{grid-template-columns:1fr}.passos-grid{gap:14px}.passo{padding:23px}.valores-interior{gap:14px;flex-wrap:wrap}}
 @media(max-width:570px){.contentor{width:min(100% - 34px,1180px)}.barra-interna{justify-content:center}.barra-interna span:last-child{display:none}.marca{gap:8px;min-width:0}.marca-texto strong{font-size:10px}.marca-texto small{font-size:8px}.marca-simbolo{font-size:49px}.hero-texto{padding:52px 0 20px}.hero h1{font-size:39px}.hero-texto>p{font-size:14px}.hero-apoio{margin-top:30px}.hero-accoes{gap:18px}.hero-visual{min-height:310px}.hero-foto{height:320px}.hero-marcador{max-width:calc(100% - 14px);padding:12px 13px;left:8px}.hero-marcador strong{font-size:11px}.hero-marcador small{font-size:10px}.faixa-valores{display:none}.secao{padding-top:65px;padding-bottom:65px}.secao-cabecalho{display:block;margin-bottom:25px}.secao-cabecalho .ligacao-texto{margin-top:18px}.secao h2,.destaque-texto h2,.conteudo-instituto h2,.contactos-grid h2{font-size:29px}.cursos-grid,.delegacoes-grid,.passos-grid{grid-template-columns:1fr}.cartao-curso{min-height:270px;padding:24px}.seccao-destaque{padding:60px 0}.imagem-destaque{min-height:310px}.destaque-grid{gap:30px}.chamada-bloco{margin-bottom:65px}.chamada-conteudo{padding:38px 25px}.rodape-grid{grid-template-columns:1fr;padding:50px 0 25px}.rodape-base{display:block}.rodape-base span{display:block;margin:0 0 12px}.pagina-hero{padding:62px 0}.pagina-hero h1{font-size:35px}.pagina-hero p{font-size:14px}.filtros-cursos{display:block}.campo-pesquisa{max-width:none;min-width:0;margin-bottom:15px}.filtros-botoes{gap:7px}.filtro{font-size:11px;padding:9px 11px}.conteudo-instituto{gap:22px}.contacto-lateral{padding:30px}.estado-vazio{padding:50px 20px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+
+
+/* Centro de notícias — grelha partilhada por página inicial e arquivo */
+.noticias-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.cartao-noticia{display:flex;flex-direction:column;border:1px solid var(--linha);border-radius:15px;overflow:hidden;background:#fff;transition:box-shadow .2s,transform .2s}
+.cartao-noticia:hover{transform:translateY(-3px);box-shadow:0 14px 36px #0b2d7112}
+.noticia-imagem-ligacao{display:block;aspect-ratio:16/10;overflow:hidden;background:#ebf1fa}
+.noticia-imagem-ligacao img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
+.cartao-noticia:hover .noticia-imagem-ligacao img{transform:scale(1.025)}
+.imagem-indisponivel{height:100%;display:grid;place-items:center;color:#8da1c0}
+.noticia-corpo{padding:25px;display:flex;flex:1;flex-direction:column;align-items:flex-start}
+.noticia-corpo h3{font:800 19px/1.4 Manrope,Arial,sans-serif;letter-spacing:-.035em;color:#152f5b;margin:13px 0}
+.noticia-corpo p{font-size:13px;line-height:1.75;color:#738096;margin:0 0 23px}
+.noticia-corpo .ligacao-texto{margin-top:auto}
+.secao-intro{font-size:14px;color:#75839a;margin:12px 0 0}
+.recursos-noticias{display:flex;align-items:center;justify-content:space-between;gap:26px;background:#f5f8fd;padding:30px 35px;margin-top:27px;border-radius:13px}
+.recursos-noticias h3{font:800 21px Manrope,Arial,sans-serif;letter-spacing:-.03em;color:#193866;margin:9px 0}
+.recursos-noticias p{color:#718198;font-size:13px;line-height:1.65;margin:0}
+.artigo-noticia{padding-top:65px;padding-bottom:90px;max-width:950px}
+.artigo-figura{margin:0 0 35px}
+.artigo-figura img{width:100%;height:auto;display:block;border-radius:14px}
+.artigo-figura figcaption{font-size:12px;color:#7b889a;line-height:1.7;margin-top:12px}
+.artigo-texto{max-width:750px;margin-inline:auto}
+.artigo-texto p{font-size:17px;line-height:1.95;color:#40516b;margin:0 0 25px}
+.artigo-navegacao{max-width:750px;margin:40px auto 0;padding-top:25px;border-top:1px solid var(--linha)}
+.aviso-conteudo{display:flex;gap:8px;align-items:center}
+@media(max-width:850px){.noticias-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.recursos-noticias{align-items:flex-start;flex-direction:column}}
+@media(max-width:570px){.noticias-grid{grid-template-columns:1fr}.recursos-noticias{padding:25px}.artigo-noticia{padding-top:35px;padding-bottom:55px}.artigo-texto p{font-size:15px}}
