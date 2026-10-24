@@ -277,3 +277,32 @@ html.scroll-transicoes-activas [data-scroll-section].scroll-abaixo{
 .parceiros-nota{text-align:center;color:#8994a5;font-size:11px;line-height:1.6;max-width:730px;margin:20px auto 0}
 @media(max-width:620px){.parceiros-seccao{padding:56px 0}.parceiros-grelha{grid-template-columns:1fr;max-width:400px}.parceiros-cartao{height:140px;padding:24px}}
 @media(prefers-reduced-motion:reduce){.parceiros-cartao{transition:none!important}.parceiros-cartao:hover{transform:none!important}}
+
+/* Explorador de línguas da página inicial: selecção compacta, painel único. */
+.explorador-linguas{border:1px solid #e3eaf3;border-radius:18px;overflow:hidden;background:#fff}
+.explorador-opcoes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-bottom:1px solid #e3eaf3}
+.explorador-opcao{display:flex;gap:14px;align-items:center;text-align:left;min-width:0;padding:22px 24px;background:white;color:#30496e;border:0;border-right:1px solid #e9eef5;border-bottom:1px solid #e9eef5;font-size:14px;font-weight:800;transition:background .2s,color .2s}
+.explorador-opcao:hover{background:#f5f8fc}
+.explorador-opcao.seleccionada{background:#eef4fc;color:#0b2d71;box-shadow:inset 0 -3px #f8c427}
+.explorador-simbolo{font-size:27px;display:grid;place-items:center;flex:0 0 35px}
+.explorador-painel{display:grid;grid-template-columns:minmax(0,1fr) 230px;align-items:center;gap:35px;background:linear-gradient(115deg,#fff 40%,#eef4fc);padding:38px 46px;animation:explorador-entrada .3s ease both}
+.explorador-painel h3{font:800 clamp(28px,3vw,37px)/1.2 Manrope,Arial,sans-serif;color:#0b2d71;letter-spacing:-.04em;margin:0 0 14px}
+.explorador-painel p{font-size:14px;line-height:1.85;color:#64758d;max-width:670px;margin:0 0 18px}
+.explorador-painel .sobretitulo{margin-bottom:13px}
+.explorador-competencias{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 25px}
+.explorador-competencias span{font-size:11px;color:#496185;background:#f3f6fa;padding:8px 11px;border-radius:25px}
+.explorador-marca{font-size:116px;display:grid;place-items:center;min-height:180px;color:#0b2d71}
+@keyframes explorador-entrada{from{opacity:.3;transform:translateY(8px)}to{opacity:1;transform:none}}
+/* Catálogo académico: linhas legíveis, sem repetição de cartões. */
+.catalogo-cursos{border-top:1px solid #e2e9f3}
+.catalogo-linha{display:flex;align-items:center;gap:26px;padding:26px 18px;border-bottom:1px solid #e2e9f3;transition:background .2s,padding-left .2s}
+.catalogo-linha:hover{background:#f6f9fd;padding-left:26px}
+.catalogo-identidade{display:grid;place-items:center;width:62px;height:62px;border-radius:12px;background:#eef3fa;font-size:34px;flex:none;color:#0b2d71}
+.catalogo-corpo{display:flex;flex:1;flex-direction:column;gap:6px;min-width:0}
+.catalogo-categoria{text-transform:uppercase;color:#8392aa;font-weight:800;letter-spacing:.1em;font-size:10px}
+.catalogo-corpo strong{font:800 19px Manrope,Arial,sans-serif;color:#143363}
+.catalogo-resumo{font-size:13px;color:#728198;line-height:1.6}
+.catalogo-acao{color:#0b2d71;display:flex;align-items:center;gap:10px;white-space:nowrap;font-size:12px;font-weight:800}
+@media(max-width:850px){.explorador-opcoes{grid-template-columns:repeat(2,minmax(0,1fr))}.explorador-painel{grid-template-columns:minmax(0,1fr) 110px;padding:32px}.explorador-marca{font-size:78px}}
+@media(max-width:570px){.explorador-opcoes{grid-template-columns:repeat(2,minmax(0,1fr))}.explorador-opcao{font-size:12px;padding:14px 10px;gap:7px}.explorador-simbolo{font-size:22px;flex-basis:27px}.explorador-painel{display:block;padding:27px 22px}.explorador-marca{display:none}.catalogo-linha{gap:13px;padding:20px 4px}.catalogo-linha:hover{padding-left:8px}.catalogo-identidade{width:45px;height:45px;font-size:27px}.catalogo-corpo strong{font-size:16px}.catalogo-acao{font-size:0;gap:0}.catalogo-acao svg{width:20px}}
+@media(prefers-reduced-motion:reduce){.explorador-painel{animation:none}.catalogo-linha,.explorador-opcao{transition:none}.catalogo-linha:hover{padding-left:18px}}
