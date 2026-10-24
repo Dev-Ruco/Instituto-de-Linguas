@@ -10,9 +10,11 @@ const itens = [
 ];
 export function Cabecalho() {
   const [aberto, definirAberto] = useState(false);
+  const [compacto, definirCompacto] = useState(false);
   const caminho = usePathname();
   useEffect(() => definirAberto(false), [caminho]);
-  return <header className="cabecalho">
+  useEffect(()=>{const verificar=()=>definirCompacto(window.scrollY>64);verificar();window.addEventListener("scroll",verificar,{passive:true});return ()=>window.removeEventListener("scroll",verificar)},[]);
+  return <header className={compacto ? "cabecalho compacto" : "cabecalho"}>
     <div className="barra-superior"><div className="contentor barra-interna"><span>Instituto de Línguas · Moçambique</span><span>Aprenda connosco a comunicar com o mundo</span></div></div>
     <div className="contentor cabecalho-interior">
       <Link className="marca" href="/" aria-label="Instituto de Línguas — página inicial">

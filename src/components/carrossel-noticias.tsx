@@ -14,7 +14,7 @@ const INTERVALO_MS = 4500;
 export function CarrosselNoticias({ noticias }: { noticias: Noticia[] }) {
   const lista = useRef<HTMLDivElement>(null);
   const [pausado, definirPausa] = useState(false);
-  const [posicao, definirPosicao] = useState(0);
+
 
   const deslocar = useCallback((sentido: 1 | -1) => {
     const elemento = lista.current;
@@ -45,7 +45,7 @@ export function CarrosselNoticias({ noticias }: { noticias: Noticia[] }) {
   }, [pausado, noticias.length, deslocar]);
 
   return (
-    <div className="carrossel-noticias"
+    <div className={pausado ? "carrossel-noticias em-pausa" : "carrossel-noticias"}
       onMouseEnter={() => definirPausa(true)}
       onMouseLeave={() => definirPausa(false)}
       onFocusCapture={() => definirPausa(true)}
@@ -57,12 +57,12 @@ export function CarrosselNoticias({ noticias }: { noticias: Noticia[] }) {
       aria-roledescription="carrossel"
       aria-label="Notícias e actualizações em destaque">
       <div className="carrossel-trilho" ref={lista}
-        onScroll={evento => definirPosicao(evento.currentTarget.scrollLeft)}
         aria-live="off">
         {noticias.map(noticia => <div className="carrossel-item" key={noticia.slug}>
           <CartaoNoticia noticia={noticia}/>
         </div>)}
       </div>
+      <div className="carrossel-progresso" aria-hidden="true"><span/></div>
       <div className="carrossel-controlos">
         <span className="carrossel-indicacao">Deslize para explorar mais notícias</span>
         <div className="carrossel-botoes">
