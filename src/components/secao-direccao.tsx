@@ -4,7 +4,7 @@ import { perfisDireccao } from "@/lib/direccao";
 
 export function SecaoDireccao({ resumo = false }: { resumo?: boolean }) {
   return (
-    <section id="direccao" data-reveal className={resumo ? "secao direccao-moderna direccao-home" : "secao direccao-moderna"} aria-labelledby="titulo-direccao">
+    <section id="direccao" data-scroll-section={resumo ? true : undefined} data-reveal={resumo ? undefined : true} className={resumo ? "secao direccao-moderna direccao-home" : "secao direccao-moderna"} aria-labelledby="titulo-direccao">
       <div className="contentor">
         <div className="secao-cabecalho direccao-cabecalho">
           <div>
