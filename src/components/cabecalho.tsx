@@ -11,7 +11,8 @@ const itens = [
  { titulo:"Delegações", href:"/delegacoes" },
  { titulo:"Notícias", href:"/noticias" },
  { titulo:"Documentos", href:"/documentos" },
- { titulo:"Contactos", href:"/contactos" }
+ { titulo:"Contactos", href:"/contactos" },
+ { titulo:"Portal Académico", href:"/portal" }
 ];
 export function Cabecalho() {
  const [aberto,definirAberto]=useState(false);

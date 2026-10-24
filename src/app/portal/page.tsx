@@ -1,0 +1,1 @@
+import type {Metadata} from "next";import PortalAcademico from "@/components/portal-academico";export const metadata:Metadata={title:"Portal Académico — Demonstração",robots:{index:false,follow:false}};export default function PaginaPortal(){return <PortalAcademico/>}
