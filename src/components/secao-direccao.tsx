@@ -8,9 +8,9 @@ export function SecaoDireccao({ resumo = false }: { resumo?: boolean }) {
       <div className="contentor">
         <div className="secao-cabecalho direccao-cabecalho">
           <div>
-            <span className="sobretitulo">PESSOAS E LIDERANÇA</span>
-            <h2 id="titulo-direccao">Quem está à frente do Instituto</h2>
-            <p className="secao-intro">Um espaço dedicado à apresentação da equipa de direcção.</p>
+            <span className="sobretitulo">DIRECÇÃO INSTITUCIONAL</span>
+            <h2 id="titulo-direccao">Conheça a liderança do Instituto</h2>
+            <p className="secao-intro">Conheça a estrutura responsável pela orientação e pelo desenvolvimento da instituição.</p>
           </div>
           {resumo && <Link href="/instituto#direccao" className="ligacao-texto">Conhecer a estrutura <ArrowUpRight size={18}/></Link>}
         </div>

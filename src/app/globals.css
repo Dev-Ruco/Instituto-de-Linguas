@@ -453,3 +453,9 @@ html.scroll-transicoes-activas [data-scroll-section].scroll-abaixo{
 @media(max-width:850px){.numeros-institucionais{padding-bottom:35px;gap:10px}.numero-institucional{padding:20px 15px;gap:10px}.numero-institucional-icone{flex-basis:35px;width:35px;height:35px}}
 @media(max-width:620px){.numeros-institucionais{grid-template-columns:1fr;gap:12px;padding-bottom:32px}.numero-institucional{padding:19px}.numero-institucional-valor{font-size:34px}}
 @media(prefers-reduced-motion:reduce){.numero-institucional{transition:none!important}.numero-institucional:hover{transform:none!important}}
+
+/* Liderança em destaque no final da página inicial, antes dos parceiros. */
+.direccao-home{background:linear-gradient(135deg,#eaf1fb 0%,#f5f8fd 58%,#eaf0f9 100%);border-top:1px solid #dfe8f3;border-bottom:1px solid #dfe8f3;padding-block:82px}
+.direccao-home .direccao-cabecalho h2{color:#0b2d71}
+.direccao-home .dir-perfil{background:#fff}
+@media(max-width:620px){.direccao-home{padding-block:58px}}
