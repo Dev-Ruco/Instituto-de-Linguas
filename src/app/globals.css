@@ -539,3 +539,47 @@ html.scroll-transicoes-activas [data-scroll-section].scroll-abaixo{
 .explorador-opcao:hover .explorador-opcao-titulo{transform:translateX(4px)}
 .curso-bloco-portugues{background-image:url("https://flagcdn.com/pt.svg")}
 @media(prefers-reduced-motion:reduce){.explorador-opcao:hover,.explorador-opcao:hover .explorador-opcao-titulo{transform:none!important}}
+
+/* Correcção definitiva: imagens de bandeiras preservadas nos estados activo e hover.
+   Substitui as regras experimentais anteriores sem esconder a bandeira. */
+.explorador-opcoes .explorador-opcao{
+  --fundo-bandeira:linear-gradient(125deg,#071e50,#1f4a9b 70%,#b58b18);
+  background-image:var(--fundo-bandeira)!important;
+  background-color:transparent!important;
+  background-size:cover!important;
+  background-position:center!important;
+  background-repeat:no-repeat!important;
+  transform:none!important;
+  filter:none!important;
+  box-shadow:none!important;
+  border:0;
+  border-right:1px solid rgba(255,255,255,.26);
+  border-bottom:1px solid rgba(255,255,255,.26);
+  transition:box-shadow .23s ease!important;
+}
+.explorador-opcoes .curso-bloco-ingles{--fundo-bandeira:url("https://flagcdn.com/gb.svg")}
+.explorador-opcoes .curso-bloco-frances{--fundo-bandeira:url("https://flagcdn.com/fr.svg")}
+.explorador-opcoes .curso-bloco-portugues{--fundo-bandeira:url("https://flagcdn.com/pt.svg")}
+.explorador-opcoes .curso-bloco-linguas-mocambicanas{--fundo-bandeira:url("https://flagcdn.com/mz.svg")}
+.explorador-opcoes .curso-bloco-chines{--fundo-bandeira:url("https://flagcdn.com/cn.svg")}
+.explorador-opcoes .explorador-opcao::before{display:none!important}
+.explorador-opcoes .explorador-opcao .explorador-opcao-titulo{
+  display:inline;
+  background:none!important;
+  padding:0!important;
+  border-radius:0!important;
+  color:#fff!important;
+  font-weight:800;
+  text-shadow:0 1px 3px #06162b,0 2px 9px rgba(0,0,0,.85)!important;
+  transform:none!important;
+  letter-spacing:normal!important;
+}
+.explorador-opcoes .explorador-opcao:hover{box-shadow:inset 0 0 0 3px rgba(255,255,255,.78)!important}
+.explorador-opcoes .explorador-opcao.seleccionada,
+.explorador-opcoes .explorador-opcao.seleccionada:hover{
+  background-image:var(--fundo-bandeira)!important;
+  background-color:transparent!important;
+  box-shadow:inset 0 -5px 0 #f8c427!important;
+}
+.explorador-opcoes .explorador-opcao:focus-visible{outline:3px solid #f8c427!important;outline-offset:-4px}
+@media(prefers-reduced-motion:reduce){.explorador-opcoes .explorador-opcao{transition:none!important}}
