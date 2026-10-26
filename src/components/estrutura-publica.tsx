@@ -7,5 +7,5 @@ import { AnimacoesDeEntrada } from "@/components/animacoes-de-entrada";
 export function EstruturaPublica({children}:{children:React.ReactNode}){
  const caminho=usePathname();
  if(caminho==="/portal"||caminho.startsWith("/portal/"))return <main id="conteudo" className="portal-main">{children}</main>;
- return <><AnimacoesDeEntrada/><Cabecalho/><main id="conteudo">{children}</main><ParceirosInstitucionais/><Rodape/></>;
+ return <><AnimacoesDeEntrada/><div className="prototipo-aviso-site" role="note">Demonstração independente — este não é o website oficial do Instituto de Línguas.</div><Cabecalho/><main id="conteudo">{children}</main><ParceirosInstitucionais/><Rodape/></>;
 }

@@ -624,3 +624,36 @@ html.scroll-transicoes-activas [data-scroll-section].scroll-abaixo{
  .portal-main .portal-tabela-cabecalho,.portal-main .portal-tabela-linha{grid-template-columns:minmax(0,1fr) 75px;gap:6px}
  .portal-main .portal-etiqueta{font-size:9px}
 }
+
+
+/* Percurso demonstrativo de matrícula — mobile first, integrado no painel */
+.portal-demo-layout{display:grid;grid-template-columns:minmax(0,0.82fr) minmax(0,1.18fr);gap:17px;align-items:start}
+.portal-painel h2 svg{vertical-align:middle;margin-right:6px}
+.portal-form{display:grid;gap:15px}
+.portal-form label{display:grid;gap:7px;font-size:12px;font-weight:800;color:#23446f}
+.portal-form input,.portal-form select{display:block;width:100%;min-width:0;padding:13px 12px;border:1px solid #c9d6e7;border-radius:8px;font:inherit;font-weight:500;background:white;color:#16335d}
+.portal-form input:focus,.portal-form select:focus,.portal-pesquisa input:focus{outline:2px solid #f5c83a;outline-offset:2px}
+.portal-resumo-turma{display:grid;gap:4px;padding:14px;border-radius:9px;background:#edf3fb;color:#294b78;font-size:12px}
+.portal-resumo-turma span{color:#587398}
+.portal-accao{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:0;border-radius:8px;background:#0b2d71;color:white;font-weight:800;font-size:12px;padding:13px 17px;cursor:pointer;max-width:100%}
+.portal-accao:hover{background:#16468f}
+.portal-registos{display:grid;gap:0;min-width:0}
+.portal-registo{display:flex;align-items:center;justify-content:space-between;gap:12px;min-width:0;border-top:1px solid #e6edf7;padding:16px 0}
+.portal-registo>div:first-child{display:grid;gap:4px;min-width:0}
+.portal-registo small{color:#8292a8;font-size:10px;font-weight:800}
+.portal-registo strong{font-size:13px;color:#143967;overflow-wrap:anywhere}
+.portal-registo span{font-size:11px;color:#7187a1}
+.portal-registo-accoes{display:flex;gap:8px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+.portal-registo-accoes button,.portal-repor{border:1px solid #b9cce4;background:white;color:#0b2d71;border-radius:7px;padding:8px 10px;font-size:11px;font-weight:800;cursor:pointer}
+.portal-status{display:inline-block!important;border-radius:20px;padding:6px 10px;background:#fff1d6;color:#865a0b!important;font-weight:800;white-space:nowrap}
+.portal-status.confirmado{background:#e7f6ed;color:#166440!important}
+.portal-demonstracao-topo{display:flex;justify-content:space-between;gap:10px;align-items:start}
+.portal-repor{display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+.portal-registos+.portal-accao{margin-top:20px}
+.portal-feedback{background:#e8f5ed;border:1px solid #b5dfc3;color:#20613f;display:flex;align-items:center;gap:9px;border-radius:8px;padding:13px 16px;font-size:12px}
+.portal-painel .portal-pesquisa{margin-bottom:12px}
+.portal-painel .portal-pesquisa input{width:100%;min-width:0}
+.prototipo-aviso-site{background:#f7f1dd;border-bottom:1px solid #e7dcae;color:#5f511f;font-size:11px;font-weight:650;text-align:center;padding:9px 16px}
+@media(max-width:1120px){.portal-demo-layout{grid-template-columns:1fr}}
+@media(max-width:600px){.portal-pagina-cabecalho h1{font-size:28px}.portal-registo{align-items:flex-start;flex-direction:column}.portal-registo-accoes{justify-content:flex-start}.portal-demonstracao-topo{align-items:flex-start}.portal-metricas{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:365px){.portal-metricas{grid-template-columns:1fr!important}.portal-demonstracao-topo{flex-direction:column}}
