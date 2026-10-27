@@ -62,28 +62,36 @@ h1,h2,h3,.pagina-hero h1,.secao h2,.destaque-texto h2,.conteudo-instituto h2,.co
 @keyframes flutuar-il{0%,100%{transform:translateY(0) rotate(7deg)}50%{transform:translateY(-15px) rotate(-4deg)}}
 @keyframes surgir-editorial{from{opacity:0;transform:translateY(38px)}to{opacity:1;transform:translateY(0)}}
 @media(prefers-reduced-motion:no-preference){
-  .scroll-transicoes-activas [data-scroll-section] .secao-cabecalho,
-  .scroll-transicoes-activas [data-scroll-section] .destaque-texto,
-  .scroll-transicoes-activas [data-scroll-section] .imagem-destaque,
-  .scroll-transicoes-activas [data-scroll-section] .passo,
-  .scroll-transicoes-activas [data-scroll-section] .cartao-noticia,
-  .scroll-transicoes-activas [data-scroll-section] .cartao-curso-editorial{transition:opacity .8s ease,translate .85s cubic-bezier(.2,.8,.2,1),transform .55s,box-shadow .4s}
-  .scroll-transicoes-activas [data-scroll-section]:not(.scroll-em-foco) .secao-cabecalho,
-  .scroll-transicoes-activas [data-scroll-section]:not(.scroll-em-foco) .destaque-texto,
-  .scroll-transicoes-activas [data-scroll-section]:not(.scroll-em-foco) .imagem-destaque,
-  .scroll-transicoes-activas [data-scroll-section]:not(.scroll-em-foco) .passo,
-  .scroll-transicoes-activas [data-scroll-section]:not(.scroll-em-foco) .cartao-noticia,
-  .scroll-transicoes-activas [data-scroll-section]:not(.scroll-em-foco) .cartao-curso-editorial{opacity:.72;translate:0 22px}
-  .scroll-transicoes-activas [data-scroll-section].scroll-em-foco .secao-cabecalho,
-  .scroll-transicoes-activas [data-scroll-section].scroll-em-foco .destaque-texto,
-  .scroll-transicoes-activas [data-scroll-section].scroll-em-foco .imagem-destaque,
-  .scroll-transicoes-activas [data-scroll-section].scroll-em-foco .passo,
-  .scroll-transicoes-activas [data-scroll-section].scroll-em-foco .cartao-noticia,
-  .scroll-transicoes-activas [data-scroll-section].scroll-em-foco .cartao-curso-editorial{opacity:1;translate:0 0}
-  .scroll-em-foco .passo:nth-child(2),.scroll-em-foco .cartao-noticia:nth-child(2){transition-delay:.09s}
-  .scroll-em-foco .passo:nth-child(3),.scroll-em-foco .cartao-noticia:nth-child(3){transition-delay:.17s}
+.scroll-transicoes-activas [data-scroll-section] .secao-cabecalho,
+.scroll-transicoes-activas [data-scroll-section] .destaque-texto,
+.scroll-transicoes-activas [data-scroll-section] .imagem-destaque{transition:opacity .55s ease,translate .6s ease}
+.scroll-transicoes-activas [data-scroll-section]:not(.scroll-em-foco) .secao-cabecalho,
+.scroll-transicoes-activas [data-scroll-section]:not(.scroll-em-foco) .destaque-texto,
+.scroll-transicoes-activas [data-scroll-section]:not(.scroll-em-foco) .imagem-destaque{opacity:.96;translate:0 10px}
+.scroll-transicoes-activas [data-scroll-section].scroll-em-foco .secao-cabecalho,
+.scroll-transicoes-activas [data-scroll-section].scroll-em-foco .destaque-texto,
+.scroll-transicoes-activas [data-scroll-section].scroll-em-foco .imagem-destaque{opacity:1;translate:0 0}
 }
 @media(max-width:1050px){.cabecalho-interior{height:88px}.hero-grid{gap:4%}.hero h1{font-size:clamp(46px,5.7vw,67px)}.hero-foto{height:495px}.hero-visual{min-height:540px}}
 @media(max-width:850px){.contentor{width:min(100% - 44px,1250px)}.cabecalho-interior{height:76px}.hero-grid{grid-template-columns:1fr;gap:0}.hero-texto{padding:70px 0 12px}.hero h1{max-width:780px;font-size:clamp(48px,8vw,76px)}.hero-visual{min-height:450px;width:min(100%,660px);padding:30px 0 55px}.hero-foto{height:430px;border-radius:180px 180px 20px 20px}.secao{padding-block:85px}.seccao-destaque{padding-block:85px}.imagem-destaque{min-height:430px}.navegacao{top:108px;max-height:calc(100dvh - 108px);overflow-y:auto;overscroll-behavior:contain}.navegacao .botao{width:100%}}
 @media(max-width:570px){.contentor{width:calc(100% - 36px)}.hero-texto{padding:62px 0 0}.hero h1{font-size:clamp(43px,11vw,61px);letter-spacing:-.072em}.hero-texto>p{font-size:15px;line-height:1.7}.hero-accoes{align-items:flex-start;gap:19px}.hero-visual{min-height:350px;padding:30px 0 40px}.hero-foto{height:335px;border-radius:145px 145px 18px 18px}.hero-ornamento{width:68px;height:68px;right:4px;top:30px;font-size:20px}.secao{padding-block:70px}.secao h2,.destaque-texto h2,.conteudo-instituto h2,.contactos-grid h2{font-size:clamp(34px,9vw,44px)}.secao-cabecalho{margin-bottom:30px}.seccao-destaque{padding-block:70px}.imagem-destaque{min-height:320px;border-radius:20px 120px 20px 20px;box-shadow:-11px 12px 0 #e0e5d9}.passo{padding:30px}.faixa-movimento{padding:13px 0}.faixa-movimento-grupo{gap:24px;padding-right:24px}.faixa-movimento span{font-size:15px}.botao{min-height:49px}.pagina-hero h1{font-size:clamp(39px,10vw,53px)}}
 @media(prefers-reduced-motion:reduce){.faixa-movimento-trilho,.hero-ornamento{animation:none!important}.scroll-transicoes-activas [data-scroll-section] *{opacity:1!important;translate:none!important}}
+
+/* Auditoria UX: reduzir ornamentos de template e assegurar leitura. */
+.hero-foto{transform:none;border-radius:22px 130px 22px 22px;box-shadow:0 18px 50px #03122d45}
+.hero-visual:hover .hero-foto{transform:none}
+.hero-ornamento{animation:none;width:auto;height:auto;border-radius:12px;font:700 17px Manrope,sans-serif;padding:14px}
+.secao h2 span{color:#38557b}
+.passo:nth-child(2),.passo:nth-child(3){background:#f3f5f0}
+.passo:hover{transform:translateY(-3px) rotate(0deg);box-shadow:0 12px 30px #0b2d7112}
+.cartao-noticia:hover,.cartao-curso-editorial:hover,.painel-simples:hover{transform:translateY(-3px);box-shadow:0 12px 32px #0b2d7114}
+.faixa-movimento-trilho{animation:none}
+.faixa-movimento{white-space:normal}
+.faixa-movimento-grupo{flex-wrap:wrap;justify-content:center;width:100%;padding:0 20px;gap:16px 30px}
+.faixa-movimento-grupo:nth-child(2){display:none}
+.nav-ligacao,.nav-submenu-ligacao{white-space:nowrap}
+.navegacao{gap:clamp(9px,1.1vw,18px)}
+.nav-ligacao{font-size:12px}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #ae7900;outline-offset:4px}
+@media(max-width:850px){.navegacao{gap:0}.navegacao .nav-ligacao{white-space:normal;min-height:44px;display:flex;align-items:center}.hero-foto{border-radius:18px 95px 18px 18px}}
+@media(max-width:570px){.hero-foto{border-radius:18px 75px 18px 18px}.faixa-movimento-grupo{gap:10px 19px}.faixa-movimento span{font-size:13px}.hero-ornamento{right:0}}
