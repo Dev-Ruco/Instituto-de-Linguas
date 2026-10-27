@@ -1,15 +1,15 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { CartaoNoticia } from "@/components/cartao-noticia";
 import type { Noticia } from "@/lib/conteudos";
 
-const INTERVALO_MS = 4500;
+
 
 /**
  * Carrossel acessível. Mostra três cartões em ecrãs largos, dois no
- * tablet e um no telemóvel. A rotação pára durante a interacção.
+ * tablet e um no telemóvel. A navegação é manual para permitir leitura tranquila.
  */
 export function CarrosselNoticias({ noticias }: { noticias: Noticia[] }) {
   const lista = useRef<HTMLDivElement>(null);
@@ -34,15 +34,6 @@ export function CarrosselNoticias({ noticias }: { noticias: Noticia[] }) {
     elemento.scrollTo({ left: destino, behavior: "smooth" });
   }, []);
 
-  useEffect(() => {
-    if (pausado || noticias.length < 2) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-
-    const temporizador = window.setInterval(() => {
-      if (document.visibilityState === "visible") deslocar(1);
-    }, INTERVALO_MS);
-    return () => window.clearInterval(temporizador);
-  }, [pausado, noticias.length, deslocar]);
 
   return (
     <div className={pausado ? "carrossel-noticias em-pausa" : "carrossel-noticias"}
