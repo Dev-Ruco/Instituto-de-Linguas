@@ -95,3 +95,36 @@ h1,h2,h3,.pagina-hero h1,.secao h2,.destaque-texto h2,.conteudo-instituto h2,.co
 a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #ae7900;outline-offset:4px}
 @media(max-width:850px){.navegacao{gap:0}.navegacao .nav-ligacao{white-space:normal;min-height:44px;display:flex;align-items:center}.hero-foto{border-radius:18px 95px 18px 18px}}
 @media(max-width:570px){.hero-foto{border-radius:18px 75px 18px 18px}.faixa-movimento-grupo{gap:10px 19px}.faixa-movimento span{font-size:13px}.hero-ornamento{right:0}}
+
+/* Segunda revisão UX: menus acessíveis, navegação e legibilidade. */
+html{scroll-padding-top:30px}
+body{overflow-x:clip}
+:where(.hero h1,.pagina-hero h1,.secao h2,.destaque-texto h2){overflow-wrap:break-word;text-wrap:balance}
+.hero-texto>p,.destaque-texto>p{max-width:62ch}
+.botao:focus-visible,.nav-ligacao:focus-visible,.nav-submenu-botao:focus-visible,.menu-movel:focus-visible{outline:3px solid #a76b00;outline-offset:4px}
+.nav-submenu-botao,.menu-movel{min-width:44px;min-height:44px;display:inline-grid;place-items:center}
+.menu-movel{display:none}
+.nav-grupo{display:flex;align-items:center;position:relative}
+.nav-submenu{position:absolute;top:100%;left:0;z-index:40;min-width:230px;max-width:min(350px,90vw);background:#fff;border:1px solid #e4e8ef;border-radius:12px;box-shadow:0 15px 40px #091d3a24;padding:10px;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(6px);transition:opacity .15s,transform .15s,visibility .15s}
+.nav-grupo.expandido .nav-submenu,.nav-grupo:focus-within .nav-submenu{opacity:1;visibility:visible;pointer-events:auto;transform:none}
+.nav-submenu-ligacao{display:block;padding:12px 14px;min-height:44px;border-radius:8px;font-size:13px;line-height:1.4}
+.nav-submenu-ligacao:hover,.nav-submenu-ligacao:focus-visible{background:#f1f4f9}
+.cabecalho-interior{gap:14px}
+.marca{min-width:0;flex-shrink:0}
+.marca-imagem{width:clamp(110px,11.5vw,160px);height:auto;max-height:77px;object-fit:contain}
+.navegacao{min-width:0;gap:clamp(3px,.65vw,12px)}
+.nav-ligacao{font-size:clamp(10px,.81vw,12px);line-height:1.35}
+.nav-accao{padding:13px 16px}
+@media(max-width:1150px){
+.menu-movel{display:inline-grid;flex-shrink:0}
+.navegacao{display:none;position:absolute;top:100%;left:0;right:0;z-index:60;background:#fff;padding:16px max(18px,calc((100vw - 900px)/2));max-height:calc(100dvh - 104px);overflow-y:auto;box-shadow:0 18px 38px #081b3d21;flex-direction:column;align-items:stretch;gap:0}
+.navegacao.aberta{display:flex}
+.cabecalho{position:relative}
+.nav-grupo{display:grid;grid-template-columns:1fr 44px;align-items:center}
+.nav-ligacao{display:flex;align-items:center;min-height:48px;font-size:14px;white-space:normal}
+.nav-submenu{position:static;grid-column:1/-1;max-width:none;min-width:0;box-shadow:none;border:0;border-left:2px solid #d6e0ee;border-radius:0;margin-left:10px;padding:0 0 0 10px;opacity:1;visibility:visible;transform:none;display:none;pointer-events:auto}
+.nav-grupo.expandido .nav-submenu{display:block}
+.nav-accao{margin-top:12px;align-self:stretch}
+}
+@media(max-width:570px){.navegacao{max-height:calc(100dvh - 108px);padding-inline:20px}.marca-imagem{max-width:135px}.hero h1{font-size:clamp(38px,9.5vw,53px)}.hero-grid{min-width:0}.hero-visual{min-width:0}.hero-foto{max-width:100%}}
+@media(prefers-reduced-motion:reduce){.nav-submenu{transition:none}.botao{transition:none}}
