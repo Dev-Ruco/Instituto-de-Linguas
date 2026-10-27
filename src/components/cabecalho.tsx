@@ -20,6 +20,7 @@ export function Cabecalho() {
  const [compacto,definirCompacto]=useState(false);
  const caminho=usePathname();
  useEffect(()=>{definirAberto(false);definirSubmenuAberto(null)},[caminho]);
+ useEffect(()=>{if(!aberto)return;const onKey=(e:KeyboardEvent)=>{if(e.key==="Escape"){definirAberto(false);definirSubmenuAberto(null)}};document.addEventListener("keydown",onKey);return()=>document.removeEventListener("keydown",onKey)},[aberto]);
  useEffect(()=>{const verificar=()=>definirCompacto(window.scrollY>64);verificar();window.addEventListener("scroll",verificar,{passive:true});return()=>window.removeEventListener("scroll",verificar)},[]);
  return <header className={compacto?"cabecalho compacto":"cabecalho"}>
   <div className="barra-superior"><div className="contentor barra-interna"><span>Instituto de Línguas · Moçambique</span><span>Aprenda connosco a comunicar com o mundo</span></div></div>
@@ -30,8 +31,8 @@ export function Cabecalho() {
       const activo=caminho===item.href||(item.href!=="/"&&caminho.startsWith(item.href+"/"));
       return item.submenu ? <div className={submenuAberto===item.href?"nav-grupo expandido":"nav-grupo"} key={item.href}>
        <Link href={item.href} aria-current={activo?"page":undefined} className={activo?"nav-ligacao activa":"nav-ligacao"}>{item.titulo}</Link>
-       <button type="button" className="nav-submenu-botao" aria-label={`Mostrar opções de ${item.titulo}`} aria-expanded={submenuAberto===item.href} onClick={()=>definirSubmenuAberto(submenuAberto===item.href?null:item.href)}><ChevronDown size={14}/></button>
-       <div className="nav-submenu">{item.submenu.map(sub=><Link key={sub.href} href={sub.href} onClick={()=>{definirAberto(false);definirSubmenuAberto(null)}} className={caminho===sub.href?"nav-submenu-ligacao seleccionada":"nav-submenu-ligacao"}>{sub.titulo}</Link>)}</div>
+       <button type="button" className="nav-submenu-botao" aria-label={`Mostrar opções de ${item.titulo}`} aria-expanded={submenuAberto===item.href} aria-controls={`submenu-${item.href.replace("/","")}`} onClick={()=>definirSubmenuAberto(submenuAberto===item.href?null:item.href)}><ChevronDown size={14}/></button>
+       <div className="nav-submenu" id={`submenu-${item.href.replace("/","")}`}>{item.submenu.map(sub=><Link key={sub.href} href={sub.href} onClick={()=>{definirAberto(false);definirSubmenuAberto(null)}} className={caminho===sub.href?"nav-submenu-ligacao seleccionada":"nav-submenu-ligacao"}>{sub.titulo}</Link>)}</div>
       </div> : <Link key={item.href} href={item.href} target={item.href==="/portal"?"_blank":undefined} rel={item.href==="/portal"?"noopener noreferrer":undefined} aria-current={activo?"page":undefined} className={activo?"nav-ligacao activa":"nav-ligacao"}>{item.titulo}</Link>;
     })}
     <Link className="botao botao-primario nav-accao" aria-current={caminho==="/matriculas"?"page":undefined} href="/matriculas">Matrículas <ArrowUpRight size={17}/></Link>
