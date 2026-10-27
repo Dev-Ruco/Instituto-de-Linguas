@@ -128,3 +128,24 @@ body{overflow-x:clip}
 }
 @media(max-width:570px){.navegacao{max-height:calc(100dvh - 108px);padding-inline:20px}.marca-imagem{max-width:135px}.hero h1{font-size:clamp(38px,9.5vw,53px)}.hero-grid{min-width:0}.hero-visual{min-width:0}.hero-foto{max-width:100%}}
 @media(prefers-reduced-motion:reduce){.nav-submenu{transition:none}.botao{transition:none}}
+
+/* Navegação: tipografia legível e proporções adequadas. */
+@media(min-width:1151px){
+ .cabecalho-interior{gap:16px}
+ .navegacao{gap:clamp(8px,.9vw,16px)}
+ .nav-ligacao{font-size:14px;font-weight:750;letter-spacing:-.012em;line-height:1.45}
+ .nav-submenu-botao{min-width:28px;width:28px;min-height:42px}
+ .nav-grupo{gap:0}
+ .nav-accao{font-size:13px;padding:13px 18px}
+ .marca-imagem{width:clamp(110px,10vw,150px)}
+}
+@media(min-width:1151px) and (max-width:1380px){
+ .nav-ligacao{font-size:13px}
+ .navegacao{gap:7px}
+ .nav-accao{font-size:12px;padding:12px 13px}
+}
+@media(max-width:1150px){
+ .nav-ligacao{font-size:16px;line-height:1.45;font-weight:750}
+ .nav-submenu-ligacao{font-size:15px}
+ .navegacao .nav-accao{font-size:15px}
+}
