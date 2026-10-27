@@ -1,0 +1,89 @@
+/* Direcção visual editorial — Instituto de Línguas. Preserva os estilos funcionais do portal. */
+:root{--azul:#102f66;--azul-profundo:#081d43;--amarelo:#f5c544;--texto:#172642;--suave:#f5f6f2}
+body{font-family:"DM Sans",Arial,sans-serif}
+h1,h2,h3,.pagina-hero h1,.secao h2,.destaque-texto h2,.conteudo-instituto h2,.contactos-grid h2,.chamada-conteudo h2{font-family:Manrope,"DM Sans",sans-serif}
+.contentor{width:min(1250px,calc(100% - 72px))}
+.cabecalho{box-shadow:0 1px 0 #152b4b12}
+.cabecalho-interior{height:104px}
+.nav-ligacao{font-weight:800;letter-spacing:-.015em}
+.botao,.filtro{border-radius:999px}
+.botao{padding:17px 27px;position:relative;overflow:hidden;transition:transform .38s cubic-bezier(.2,.8,.2,1),box-shadow .38s,background .3s}
+.botao svg,.ligacao-texto svg,.ligacao-hero svg{transition:transform .32s}
+.botao:hover{transform:translateY(-4px);box-shadow:0 16px 32px #071d4340}
+.botao:hover svg,.ligacao-texto:hover svg,.ligacao-hero:hover svg{transform:translate(3px,-3px)}
+.botao:active{transform:translateY(-1px)}
+.hero{position:relative;background:#0a275c}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 10% 90%,#2c4d80 0%,transparent 48%),linear-gradient(130deg,#102f66,#061b40);pointer-events:none}
+.hero-grid{grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:7%;min-height:690px;position:relative}
+.hero-texto{padding:95px 0 100px}
+.etiqueta-hero{letter-spacing:.19em;font-size:11px}
+.hero h1{font-size:clamp(48px,5.7vw,87px);font-weight:800;letter-spacing:-.075em;line-height:1.035;max-width:780px;margin:30px 0}
+.hero h1 em{font-style:italic;font-family:Georgia,serif;font-weight:400;letter-spacing:-.05em}
+.hero-texto>p{font-size:17px;line-height:1.73;max-width:535px}
+.hero-visual{min-height:620px;perspective:1000px}
+.hero-foto{height:560px;border-radius:240px 240px 24px 24px;background-position:center;transform:rotate(2deg);transition:transform .8s cubic-bezier(.2,.8,.2,1);box-shadow:25px 35px 0 #f5c54418,0 35px 95px #03122d88}
+.hero-visual:hover .hero-foto{transform:rotate(0deg) scale(1.015)}
+.hero-ornamento{top:55px;right:-24px;width:87px;height:87px;display:grid;place-items:center;background:#f3c746;color:#102f66;border:0;font-size:25px;box-shadow:0 18px 38px #03153344;animation:flutuar-il 6s ease-in-out infinite}
+.hero-ornamento span{color:#102f66}
+.secao{padding-top:125px;padding-bottom:125px}
+.sobretitulo{letter-spacing:.19em;font-size:11px;margin-bottom:21px}
+.secao h2,.destaque-texto h2,.conteudo-instituto h2,.contactos-grid h2{font-size:clamp(35px,4.2vw,61px);line-height:1.09;letter-spacing:-.065em}
+.secao-cabecalho{margin-bottom:48px}
+.secao-cabecalho.central{max-width:800px;margin-inline:auto;margin-bottom:55px}
+.secao-cabecalho.central h2{max-width:750px}
+.seccao-destaque{background:#f1f3ed;padding-block:125px;overflow:hidden}
+.destaque-grid{gap:9%}
+.imagem-destaque{min-height:580px;border-radius:24px 220px 24px 24px;box-shadow:-21px 22px 0 #e0e5d9;transition:transform .7s cubic-bezier(.2,.8,.2,1)}
+.imagem-destaque:hover{transform:scale(1.02) rotate(-1deg)}
+.destaque-texto>p{font-size:16px}
+.destaque-linha>span{border-radius:50%}
+.passo{border:0;background:#f3f5f0;border-radius:24px;padding:39px 34px;transition:transform .55s cubic-bezier(.2,.8,.2,1),background .3s,box-shadow .4s}
+.passo:nth-child(2){background:#e9eff8}
+.passo:nth-child(3){background:#faf1d7}
+.passo:hover{transform:translateY(-10px) rotate(-.6deg);box-shadow:0 25px 55px #0b2d711b}
+.passo>span{font-size:38px;letter-spacing:-.07em}
+.passo h3{font-size:21px}
+.cartao-noticia,.cartao-curso-editorial,.painel-simples{border-radius:23px;transition:transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .4s,border-color .3s}
+.cartao-noticia:hover,.cartao-curso-editorial:hover,.painel-simples:hover{transform:translateY(-9px);box-shadow:0 25px 55px #0b2d711a}
+.noticia-imagem-ligacao img{transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.cartao-noticia:hover .noticia-imagem-ligacao img{transform:scale(1.07)}
+.curso-editorial-conteudo{padding:27px 27px 23px;display:flex;flex:1;flex-direction:column}
+.chamada-bloco{border-radius:30px;transform:translateZ(0)}
+.recursos-noticias{border-radius:24px}
+.pagina-hero{background:#f1f3ed}
+.pagina-hero h1{font-size:clamp(40px,5.2vw,72px);line-height:1.07}
+.faixa-movimento{overflow:hidden;background:#f5c544;color:#092650;white-space:nowrap;display:flex;align-items:center;padding:18px 0;border-block:1px solid #dba92a}
+.faixa-movimento-trilho{display:flex;width:max-content;animation:faixa-deslizar 34s linear infinite}
+.faixa-movimento-grupo{display:flex;align-items:center;flex-shrink:0;gap:38px;padding-right:38px}
+.faixa-movimento span{font-family:Manrope,sans-serif;font-size:clamp(14px,1.8vw,21px);font-weight:800;letter-spacing:-.045em}
+.faixa-movimento b{font-size:12px;color:#102f66;opacity:.6}
+.faixa-movimento:hover .faixa-movimento-trilho{animation-play-state:paused}
+@keyframes faixa-deslizar{to{transform:translateX(-50%)}}
+@keyframes flutuar-il{0%,100%{transform:translateY(0) rotate(7deg)}50%{transform:translateY(-15px) rotate(-4deg)}}
+@keyframes surgir-editorial{from{opacity:0;transform:translateY(38px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:no-preference){
+  .scroll-transicoes-activas [data-scroll-section] .secao-cabecalho,
+  .scroll-transicoes-activas [data-scroll-section] .destaque-texto,
+  .scroll-transicoes-activas [data-scroll-section] .imagem-destaque,
+  .scroll-transicoes-activas [data-scroll-section] .passo,
+  .scroll-transicoes-activas [data-scroll-section] .cartao-noticia,
+  .scroll-transicoes-activas [data-scroll-section] .cartao-curso-editorial{transition:opacity .8s ease,translate .85s cubic-bezier(.2,.8,.2,1),transform .55s,box-shadow .4s}
+  .scroll-transicoes-activas [data-scroll-section]:not(.scroll-em-foco) .secao-cabecalho,
+  .scroll-transicoes-activas [data-scroll-section]:not(.scroll-em-foco) .destaque-texto,
+  .scroll-transicoes-activas [data-scroll-section]:not(.scroll-em-foco) .imagem-destaque,
+  .scroll-transicoes-activas [data-scroll-section]:not(.scroll-em-foco) .passo,
+  .scroll-transicoes-activas [data-scroll-section]:not(.scroll-em-foco) .cartao-noticia,
+  .scroll-transicoes-activas [data-scroll-section]:not(.scroll-em-foco) .cartao-curso-editorial{opacity:.72;translate:0 22px}
+  .scroll-transicoes-activas [data-scroll-section].scroll-em-foco .secao-cabecalho,
+  .scroll-transicoes-activas [data-scroll-section].scroll-em-foco .destaque-texto,
+  .scroll-transicoes-activas [data-scroll-section].scroll-em-foco .imagem-destaque,
+  .scroll-transicoes-activas [data-scroll-section].scroll-em-foco .passo,
+  .scroll-transicoes-activas [data-scroll-section].scroll-em-foco .cartao-noticia,
+  .scroll-transicoes-activas [data-scroll-section].scroll-em-foco .cartao-curso-editorial{opacity:1;translate:0 0}
+  .scroll-em-foco .passo:nth-child(2),.scroll-em-foco .cartao-noticia:nth-child(2){transition-delay:.09s}
+  .scroll-em-foco .passo:nth-child(3),.scroll-em-foco .cartao-noticia:nth-child(3){transition-delay:.17s}
+}
+@media(max-width:1050px){.cabecalho-interior{height:88px}.hero-grid{gap:4%}.hero h1{font-size:clamp(46px,5.7vw,67px)}.hero-foto{height:495px}.hero-visual{min-height:540px}}
+@media(max-width:850px){.contentor{width:min(100% - 44px,1250px)}.cabecalho-interior{height:76px}.hero-grid{grid-template-columns:1fr;gap:0}.hero-texto{padding:70px 0 12px}.hero h1{max-width:780px;font-size:clamp(48px,8vw,76px)}.hero-visual{min-height:450px;width:min(100%,660px);padding:30px 0 55px}.hero-foto{height:430px;border-radius:180px 180px 20px 20px}.secao{padding-block:85px}.seccao-destaque{padding-block:85px}.imagem-destaque{min-height:430px}.navegacao{top:108px;max-height:calc(100dvh - 108px);overflow-y:auto;overscroll-behavior:contain}.navegacao .botao{width:100%}}
+@media(max-width:570px){.contentor{width:calc(100% - 36px)}.hero-texto{padding:62px 0 0}.hero h1{font-size:clamp(43px,11vw,61px);letter-spacing:-.072em}.hero-texto>p{font-size:15px;line-height:1.7}.hero-accoes{align-items:flex-start;gap:19px}.hero-visual{min-height:350px;padding:30px 0 40px}.hero-foto{height:335px;border-radius:145px 145px 18px 18px}.hero-ornamento{width:68px;height:68px;right:4px;top:30px;font-size:20px}.secao{padding-block:70px}.secao h2,.destaque-texto h2,.conteudo-instituto h2,.contactos-grid h2{font-size:clamp(34px,9vw,44px)}.secao-cabecalho{margin-bottom:30px}.seccao-destaque{padding-block:70px}.imagem-destaque{min-height:320px;border-radius:20px 120px 20px 20px;box-shadow:-11px 12px 0 #e0e5d9}.passo{padding:30px}.faixa-movimento{padding:13px 0}.faixa-movimento-grupo{gap:24px;padding-right:24px}.faixa-movimento span{font-size:15px}.botao{min-height:49px}.pagina-hero h1{font-size:clamp(39px,10vw,53px)}}
+@media(prefers-reduced-motion:reduce){.faixa-movimento-trilho,.hero-ornamento{animation:none!important}.scroll-transicoes-activas [data-scroll-section] *{opacity:1!important;translate:none!important}}
